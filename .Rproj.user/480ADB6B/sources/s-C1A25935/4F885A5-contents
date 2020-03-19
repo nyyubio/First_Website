@@ -1,0 +1,14 @@
+id = "nyyubio"
+
+[email]
+username = "nyyubio"
+host = "gmail.com"
+
+[name]
+display = "Nancy Yu"
+
+[social]
+email = ""
+#facebook  = "MunifTanjim"
+twitter = "ynancy"
+google_scholar = 
