@@ -1,6 +1,10 @@
 {
-    "path" : "~/Documents/R website/First_Website/public",
+    "path" : "~/Documents/R website/First_Website",
     "sortOrder" : [
+        {
+            "ascending" : false,
+            "columnIndex" : 4
+        },
         {
             "ascending" : true,
             "columnIndex" : 2

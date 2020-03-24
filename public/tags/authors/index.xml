@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>authors on Learning to make a website during the coronavirus quarantine period</title>
+    <title>authors on Coronavirus Cabin Fever</title>
     <link>/tags/authors/</link>
-    <description>Recent content in authors on Learning to make a website during the coronavirus quarantine period</description>
+    <description>Recent content in authors on Coronavirus Cabin Fever</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Tue, 26 Sep 2017 06:00:00 +0600</lastBuildDate>
     
@@ -21,7 +21,7 @@
 Author&amp;rsquo;s Profile For adding an author to your site:
  Create data/authors folder in your site&amp;rsquo;s root directory Create a file with the filename format: &amp;lt;username&amp;gt;.toml  Now, add information about the author using the structure below:
 /data/authors/muniftanjim.toml
-id = &amp;#34;nyyubio&amp;#34; [email] username = &amp;#34;nyyubio&amp;#34; host = &amp;#34;gmail.</description>
+id = &amp;#34;muniftanjim&amp;#34; [email] username = &amp;#34;muniftanjim&amp;#34; host = &amp;#34;gmail.</description>
     </item>
     
   </channel>

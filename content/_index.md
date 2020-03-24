@@ -5,5 +5,12 @@ menu:
 title: Home
 weight: -270
 ---
-> Minimalism is not a lack of something. It’s simply the perfect amount of something.
-> — Nicholas Burroughs
+
+My attempt to learn to build a website during the coronavirus quarantine period.
+I am building this website based on [blogdown] and [Hugo].
+
+[blogdown]: https://bookdown.org/yihui/blogdown/
+[Hugo]: https://gohugo.io/
+
+
+

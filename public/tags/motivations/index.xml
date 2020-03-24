@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>motivations on Coronavirus Cabin Fever</title>
+    <link>/tags/motivations/</link>
+    <description>Recent content in motivations on Coronavirus Cabin Fever</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 23 Mar 2020 17:20:00 +0100</lastBuildDate>
+    
+	<atom:link href="/tags/motivations/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>First post of the site</title>
+      <link>/blog/firstpost/</link>
+      <pubDate>Mon, 23 Mar 2020 17:20:00 +0100</pubDate>
+      
+      <guid>/blog/firstpost/</guid>
+      <description>First Post Hello World! I have always wanted to learn make a webpage, but lacked time, focus, and interesting contents to place on the website. I am currently searching for employement, but due to the coronavirus SARS-Cov-2 outbreak, both the economy and I are undergoing a lockdown right now. What better time than now to teach myself some skills that will make me more employable when pandemic become under control and the economy goes into recovery!</description>
+    </item>
+    
+  </channel>
+</rss>
