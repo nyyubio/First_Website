@@ -5,20 +5,22 @@
     <link>/post/</link>
     <description>Recent content in Posts on Coronavirus Cabin Fever</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 23 Jul 2015 21:13:14 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 01 Apr 2020 18:00:00 -0100</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Hello R Markdown</title>
-      <link>/post/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      <title>Coronavirus cases in Germany</title>
+      <link>/post/germanycases/</link>
+      <pubDate>Wed, 01 Apr 2020 18:00:00 -0100</pubDate>
       
-      <guid>/post/2015-07-23-r-rmarkdown/</guid>
-      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+      <guid>/post/germanycases/</guid>
+      <description>This is my attempt to visualize some SARS-CoV-2 data with some R code (please pardon the non-optimal layout). German data is obtained from [Robert Koch Institute]. Data up to April 1, 2020 (not updated every day).
+ 
+Cumulative number of confirmed SARS-CoV-2 cases in Germany in linear scale since 100th case Only the top 10 states with the highest number of cases are plotted.
+ 
+ Number of confirmed cases (Logarithmic scale)</description>
     </item>
     
   </channel>

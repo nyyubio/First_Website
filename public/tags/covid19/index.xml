@@ -5,18 +5,22 @@
     <link>/tags/covid19/</link>
     <description>Recent content in covid19 on Coronavirus Cabin Fever</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 23 Mar 2020 17:20:00 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 01 Apr 2020 18:00:00 -0100</lastBuildDate>
     
 	<atom:link href="/tags/covid19/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>First post of the site</title>
-      <link>/blog/firstpost/</link>
-      <pubDate>Mon, 23 Mar 2020 17:20:00 +0100</pubDate>
+      <title>Coronavirus cases in Germany</title>
+      <link>/post/germanycases/</link>
+      <pubDate>Wed, 01 Apr 2020 18:00:00 -0100</pubDate>
       
-      <guid>/blog/firstpost/</guid>
-      <description>First Post Hello World! I have always wanted to learn make a webpage, but lacked time, focus, and interesting contents to place on the website. I am currently searching for employement, but due to the coronavirus SARS-Cov-2 outbreak, both the economy and I are undergoing a lockdown right now. What better time than now to teach myself some skills that will make me more employable when pandemic become under control and the economy goes into recovery!</description>
+      <guid>/post/germanycases/</guid>
+      <description>This is my attempt to visualize some SARS-CoV-2 data with some R code (please pardon the non-optimal layout). German data is obtained from [Robert Koch Institute]. Data up to April 1, 2020 (not updated every day).
+ 
+Cumulative number of confirmed SARS-CoV-2 cases in Germany in linear scale since 100th case Only the top 10 states with the highest number of cases are plotted.
+ 
+ Number of confirmed cases (Logarithmic scale)</description>
     </item>
     
   </channel>

@@ -5,7 +5,7 @@
     <link>/</link>
     <description>Recent content in Home on Coronavirus Cabin Fever</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 23 Mar 2020 17:20:00 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 01 Apr 2020 18:00:00 -0100</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
@@ -26,6 +26,19 @@
       
       <guid>/about/</guid>
       <description>I am a bioinformatician in the process of converting into a data scientist. Totally nerdy about data visualization, and studying data trends. Also a foodie, climber, and yogi. Using the coronavirus quarantine period to teach myself to make a website, visualize coronavirus data, and machine learning / AI stuff.</description>
+    </item>
+    
+    <item>
+      <title>Coronavirus cases in Germany</title>
+      <link>/post/germanycases/</link>
+      <pubDate>Wed, 01 Apr 2020 18:00:00 -0100</pubDate>
+      
+      <guid>/post/germanycases/</guid>
+      <description>This is my attempt to visualize some SARS-CoV-2 data with some R code (please pardon the non-optimal layout). German data is obtained from [Robert Koch Institute]. Data up to April 1, 2020 (not updated every day).
+ 
+Cumulative number of confirmed SARS-CoV-2 cases in Germany in linear scale since 100th case Only the top 10 states with the highest number of cases are plotted.
+ 
+ Number of confirmed cases (Logarithmic scale)</description>
     </item>
     
     <item>
