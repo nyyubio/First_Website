@@ -10,7 +10,7 @@ weight: -220
 
 #### Coronavirus SARS-CoV-2 pandemic-related links
 
-[Johns Hopkins Coronavirus Resource Center]: Updated data and news on the coronavirus update, with dashboards and many useful data visualizations.
+[Johns Hopkins Coronavirus Resource Center]: Latest data and news on the coronavirus outbreak, with dashboards and many useful data visualizations.
 
 [ECDC]: European Center for Disease Prevention and Control, which has pretty good updated data and visualizations for the coronavirus outbreak.
 
@@ -31,9 +31,9 @@ weight: -220
 
 #### Modeling sites
 
-No models are perfect. Change one parameter, and the trajectory of the curve could be completely different. However, you know how the saying goes: *all models are wrong, but some might be useful*.
+No models are perfect. Change one parameter, and the trajectory of the curve could become completely different. However, you know how the saying goes: *all models are wrong, but some might be useful*.
 
-[IHME Covid-19 projections]: a US-centric, state-by-state projection of number of deaths, beds, ICU units and ventilators needed, assuming full social distancing measures are in place. 
+[IHME Covid-19 projections]: A US-centric, state-by-state projection of number of deaths, beds, ICU units and ventilators needed, assuming full social distancing measures are in place. 
 
 [COVID Act Now]: a US-centric projection of the number of hospitalizations needed, depending on the extent of social distancing measures executed. Projects are made at the state and county levels.
 
@@ -46,4 +46,4 @@ If you have a website that you really want me to add to this list, please feel f
 
 
 
-*Last updated: 2020-04-02.*
+*Last updated: 2020-04-03.*
