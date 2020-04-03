@@ -1,4 +1,4 @@
-﻿State,Deaths,Days_1
+﻿State,Deaths,DeathsDays_1
 Baden-Württemberg,2,1
 Baden-Württemberg,2,2
 Baden-Württemberg,2,3
@@ -17,6 +17,7 @@ Baden-Württemberg,101,15
 Baden-Württemberg,119,16
 Baden-Württemberg,165,17
 Baden-Württemberg,197,18
+Baden-Württemberg,241,19
 Bavaria,4,1
 Bavaria,4,2
 Bavaria,4,3
@@ -35,6 +36,7 @@ Bavaria,107,15
 Bavaria,127,16
 Bavaria,162,17
 Bavaria,225,18
+Bavaria,268,19
 Berlin,0,0
 Berlin,0,0
 Berlin,0,0
@@ -53,6 +55,7 @@ Berlin,9,9
 Berlin,11,10
 Berlin,13,11
 Berlin,16,12
+Berlin,19,13
 Hamburg,0,0
 Hamburg,0,0
 Hamburg,0,0
@@ -71,6 +74,7 @@ Hamburg,4,3
 Hamburg,5,4
 Hamburg,9,5
 Hamburg,14,6
+Hamburg,14,7
 Hesse,0,0
 Hesse,0,0
 Hesse,0,0
@@ -89,6 +93,7 @@ Hesse,9,10
 Hesse,13,11
 Hesse,17,12
 Hesse,21,13
+Hesse,27,14
 Lower_Saxony,0,0
 Lower_Saxony,0,0
 Lower_Saxony,0,0
@@ -107,6 +112,7 @@ Lower_Saxony,21,8
 Lower_Saxony,26,9
 Lower_Saxony,34,10
 Lower_Saxony,42,11
+Lower_Saxony,45,12
 North_Rhine-Westphalia,6,1
 North_Rhine-Westphalia,6,2
 North_Rhine-Westphalia,6,3
@@ -125,6 +131,7 @@ North_Rhine-Westphalia,98,15
 North_Rhine-Westphalia,101,16
 North_Rhine-Westphalia,117,17
 North_Rhine-Westphalia,134,18
+North_Rhine-Westphalia,161,19
 Rhineland-Palatinate,0,0
 Rhineland-Palatinate,0,0
 Rhineland-Palatinate,0,0
@@ -143,6 +150,7 @@ Rhineland-Palatinate,12,10
 Rhineland-Palatinate,18,11
 Rhineland-Palatinate,19,12
 Rhineland-Palatinate,23,13
+Rhineland-Palatinate,26,14
 Saxony,0,0
 Saxony,0,0
 Saxony,0,0
@@ -161,6 +169,7 @@ Saxony,9,6
 Saxony,9,7
 Saxony,12,8
 Saxony,17,9
+Saxony,18,10
 Schles­wig-Holstein,0,0
 Schles­wig-Holstein,0,0
 Schles­wig-Holstein,0,0
@@ -179,3 +188,4 @@ Schles­wig-Holstein,6,10
 Schles­wig-Holstein,7,11
 Schles­wig-Holstein,9,12
 Schles­wig-Holstein,10,13
+Schles­wig-Holstein,11,14

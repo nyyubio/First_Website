@@ -5,7 +5,7 @@
     <link>/authors/nyyubio/</link>
     <description>Recent content in nyyubio on Coronavirus Cabin Fever</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 23 Mar 2020 17:20:00 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 02 Apr 2020 17:00:00 +0100</lastBuildDate>
     
 	<atom:link href="/authors/nyyubio/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17,6 +17,18 @@
       
       <guid>/projects/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Links</title>
+      <link>/links/</link>
+      <pubDate>Thu, 02 Apr 2020 17:00:00 +0100</pubDate>
+      
+      <guid>/links/</guid>
+      <description>Coronavirus SARS-CoV-2 pandemic-related links Johns Hopkins Coronavirus Resource Center: Updated data and news on the coronavirus update, with dashboards and many useful data visualizations.
+ECDC: European Center for Disease Prevention and Control, which has pretty good updated data and visualizations for the coronavirus outbreak.
+WHO page for coronavirus pandemic: The official numbers from WHO. Their numbers tend to be a bit behind Johns Hopkins and ECDC though.
+Our World in Data: Clean data visualization and statistics about the coronavirus pandemic in the world, including number of cases, amount of testing performed in each country, number of deaths, mortality rates, etc.</description>
     </item>
     
     <item>

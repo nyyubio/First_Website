@@ -5,6 +5,6 @@ title: About
 weight: -210
 ---
 
-I am a bioinformatician in the process of converting into a data scientist. Totally nerdy about data visualization, and studying data trends. Also a foodie, climber, and yogi. Using the coronavirus quarantine period to teach myself to make a website, visualize coronavirus data, and machine learning / AI stuff. 
+I am a bioinformatician who is totally nerdy about data visualization, and studying data trends. Also a foodie, climber, and yogi. I am using the coronavirus quarantine period to teach myself to make a website, visualize coronavirus data, and machine learning / AI stuff. 
 
 

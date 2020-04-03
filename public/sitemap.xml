@@ -4,7 +4,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2020-04-01T18:00:00-01:00</lastmod>
+    <lastmod>2020-04-02T17:00:00+01:00</lastmod>
   </url>
   
   <url>
@@ -18,7 +18,27 @@
   </url>
   
   <url>
+    <loc>/links/</loc>
+    <lastmod>2020-04-02T17:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/about/</loc>
+  </url>
+  
+  <url>
+    <loc>/authors/</loc>
+    <lastmod>2020-04-02T17:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/nyyubio/</loc>
+    <lastmod>2020-04-02T17:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/page/</loc>
+    <lastmod>2020-04-02T17:00:00+01:00</lastmod>
   </url>
   
   <url>
@@ -52,11 +72,6 @@
   </url>
   
   <url>
-    <loc>/authors/</loc>
-    <lastmod>2020-03-23T17:20:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/categories/blog/</loc>
     <lastmod>2020-03-23T17:20:00+01:00</lastmod>
   </url>
@@ -74,16 +89,6 @@
   <url>
     <loc>/tags/motivations/</loc>
     <lastmod>2020-03-23T17:20:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/nyyubio/</loc>
-    <lastmod>2020-03-23T17:20:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/page/</loc>
-    <lastmod>2020-03-20T17:00:00+01:00</lastmod>
   </url>
   
   <url>

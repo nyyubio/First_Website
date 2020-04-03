@@ -25,13 +25,17 @@ libload(packages)
 
 
 `%notin%` <- function(x,y) !(x %in% y) 
+cumulative.cases <- read_csv(here("static", "data", "Germany10States.csv"))
 
 
 ```
 
-This is my attempt to visualize some SARS-CoV-2 data with some R code (please pardon the non-optimal layout). German data is obtained from [Robert Koch Institute]. Data up to April 1, 2020 (not updated every day).
+This is my attempt to visualize some SARS-CoV-2 data with some R code (please pardon the non-optimal layout). German data is obtained from the [Robert Koch Institute]. Data used from March 15-April 2, 2020 (not updated every day).
 
 [Rober Koch Institute]: https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Fallzahlen.html
+
+For better information about SARS-CoV-2 in Germany in English, see [here](https://www.german-way.com/for-expats/living-in-germany/expat-how-to-guides-for-germany/coronavirus-in-germany-information/).
+
 
 <br/>
 <br/>
@@ -45,16 +49,14 @@ Only the top 10 states with the highest number of cases are plotted.
 ## 10 States with the highest cumulative cases ##
 #################################################
 
-cumulative.cases <- read_csv(here("static", "data", "GermanyTotalCases10States.csv"))
-countries.filter <- cumulative.cases[cumulative.cases$Days_100 >= 0,]
-states.sel <- unique(countries.filter$State)
+states.filter <- cumulative.cases[cumulative.cases$Days_100 >= 0,]
+states.sel <- unique(states.filter$State)
 
 # Choose all the data points for the selected countries starting from Days_100 > 0
-countries.final <- countries.filter[countries.filter$State %in% states.sel & countries.filter$Days_100 > 0,]
-
+states.final <- states.filter[states.filter$State %in% states.sel & states.filter$Days_100 > 0,]
 
 # Plot 1 == Linear scale for total number of cases
-cum.plot <- ggplot(data=countries.final, aes(x=Days_100, y=Total_Cases, group=State, color=State)) +
+cum.plot <- ggplot(data=states.final, aes(x=Days_100, y=Total_Cases, group=State, color=State)) +
             geom_line() + geom_point(size = 0.2) + scale_color_brewer(palette = 'Paired') +
             scale_x_continuous('Days since the 100th case', limits=c(0,20)) + scale_y_continuous("Total cases") + 
             #ggtitle('Linear scale') +
@@ -66,7 +68,9 @@ print(cum.plot)
 <br/>
 <br/>
   
-##### Number of confirmed cases (Logarithmic scale)
+##### Number of confirmed cases shown in logarithmic scale
+
+For exponential growth, the amount of time cases increase from 100 to 1000 is roughly the same as the amount of time it goes from 1000 to 10000. By showing the numbers in logarithmic plot, we can see that the growth curves are slowly bending downwards, thanks to the social distancing measures. 
 
 
 ```{r cum_logscale, echo = F, message=F, fig.width=7, fig.height=4}
@@ -83,7 +87,7 @@ base_breaks <- function(n = 10){
 logbreaks <- 10^(-10:10)
 logminor_breaks <- rep(1:9, 21)*(10^rep(-10:10, each=9))
 
-cum.plot2 <- ggplot(data=countries.final, aes(x=Days_100, y=Total_Cases, group=State, color=State)) +
+cum.plot2 <- ggplot(data=states.final, aes(x=Days_100, y=Total_Cases, group=State, color=State)) +
   geom_line() + geom_point(size=0.2) + scale_color_brewer(palette = 'Paired') +
   scale_x_continuous(name='Days since the 100th case', limits=c(0,20)) + 
   scale_y_continuous(name="Total cases", trans = 'log10', breaks = logbreaks, minor_breaks = logminor_breaks) +
@@ -97,21 +101,42 @@ print(cum.plot2)
 <br/>
 <br/>
   
-##### Number of new cases in Germany by States since March 17, 2020
-10 states with the highest cases are shown, each data point is averaged over 2 consecutive days, since data isn't consistantly reported every day
+##### Cumulative number of cases per 100,000 population
 
-```{r new_deaths, echo = F, message = F, fig.width=7, fig.height=4}
-new.cases <- read_csv(here("static", "data", "GermanyNewCases10States.csv"))
+This graph shows the increase of how many cases adjusted for the population size of each state.  Per capita, Hamburg's cases are up there with Bavaria and Baden-Württemburg.
 
-newcase.plot <- ggplot(data=new.cases, aes(x=Date, y=Averaged_2days, group=State, color=State)) +
+```{r cum_per100, echo = F, message = F, fig.width=7, fig.height=4}
+
+# Plot 1 == Linear scale for total number of cases
+per100.plot <- ggplot(data=states.final, aes(x=Days_100, y=Per100, group=State, color=State)) +
             geom_line() + geom_point(size = 0.2) + scale_color_brewer(palette = 'Paired') +
-            scale_x_discrete('Dates') + scale_y_continuous("# New cases") + 
+            scale_x_continuous('Days since 100 cases', limits=c(0,20)) + scale_y_continuous("Cumulative cases per 100,000") + 
             #ggtitle('Linear scale') +
-            theme_minimal() + theme(axis.text.x = element_text(angle=45, hjust=0.5, vjust=0.5))
+            theme_minimal()
 
-print(newcase.plot)
+print(per100.plot)
+
+```
+
+  
+##### Number of new cases in Germany by States since March 17, 2020
+10 states with the highest number of deaths are shown, each data point is averaged over 5 consecutive days, since testing data is not consistantly reported every day. These curves show a trend of new cases growing over time, but have been flattening sooner for the states with fewer cases, and later for Baden Württemburg and Bavaria.
+
+```{r new_cases5days, echo = F, message = F, fig.width=7, fig.height=4}
+#new.cases <- read_csv(here("static", "data", "GermanyNewCases10States.csv"))
+
+newcase5.plot <- ggplot(data=states.final, aes(x=Days_100, y=Avg_5days, group=State, color=State)) +
+            geom_line() + geom_point(size = 0.2) + scale_color_brewer(palette = 'Paired') +
+            scale_x_continuous(name='Days since >100 cases', limits=c(0,20)) + 
+            scale_y_continuous(name="Number of new cases") + 
+            #ggtitle('Linear scale') +
+            theme_minimal()   #+ theme(axis.text.x = element_text(angle=45, hjust=0.5, vjust=0.5))
+
+print(newcase5.plot)
  
 ```
+
+_**April 3, 2020**: Looks like the growth curve is finally starting to flatten for Bavaria (probably needs a few more days to be certain). I sincerely hope the trend continues (since I live there).
 
 <br/>
 <br/>
@@ -119,15 +144,13 @@ print(newcase.plot)
 ##### Cumulative number of deaths in 10 German states with the most cases
 
 ```{r cum_deaths, echo = F, message = F, fig.width=7, fig.height=4}
-num.deaths <- read_csv(here("static", "data", "GermanyTotalDeaths10States.csv"))
-states.filter <- num.deaths[num.deaths$Days_1 >= 0,]
-states.sel <- unique(states.filter$State)
+#num.deaths <- read_csv(here("static", "data", "GermanyTotalDeaths10States.csv"))
 
 # Choose all the data points for the selected countries starting from Days_1 > 0
-deaths.final <- states.filter[states.filter$State %in% states.sel & states.filter$Days_1 > 0,]
+deaths.final <- states.final[states.final$DeathsDays_1 > 0,]
 
 # Plot 1 == Linear scale for total number of cases
-deaths.plot <- ggplot(data=deaths.final, aes(x=Days_1, y=Deaths, group=State, color=State)) +
+deaths.plot <- ggplot(data=deaths.final, aes(x=DeathsDays_1, y=Deaths, group=State, color=State)) +
             geom_line() + geom_point(size = 0.2) + scale_color_brewer(palette = 'Paired') +
             scale_x_continuous('Days since the 1st death', limits=c(0,20)) + scale_y_continuous("Total Deaths") + 
             #ggtitle('Linear scale') +
@@ -137,10 +160,11 @@ print(deaths.plot)
 
 ```
 
-**April 01, 2020**: Looks like the curve for the number of deaths in North Rhine-Westphalia is flattening. I hope the trend continues.
+_**April 01, 2020**: Looks like the curve for the number of deaths in North Rhine-Westphalia is flattening. I hope the trend continues._
 <br/>
 <br/>
 <br/>
-  
 
 
+
+*Last modified: 2020-04-03.*
