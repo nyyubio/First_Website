@@ -136,7 +136,7 @@ print(newcase5.plot)
  
 ```
 
-_**April 3, 2020**: Looks like the growth curve is finally starting to flatten for Bavaria (probably needs a few more days to be certain). I sincerely hope the trend continues (since I live there).
+_**April 3, 2020**: Looks like the growth curve is finally starting to flatten for Bavaria (probably needs a few more days to be certain). I sincerely hope the trend continues (since I live there)._
 
 <br/>
 <br/>
