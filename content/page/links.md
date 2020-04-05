@@ -18,9 +18,13 @@ weight: -220
 
 [Our World in Data]: Clean data visualization and statistics about the coronavirus pandemic in the world, including number of cases, amount of testing performed in each country, number of deaths, mortality rates, etc.
 
+[New York Times coronavirus maps]: Clean visualization of cases all over the world with maps, as well as rate of change (the degree in which cases rising) for each country, as well as county- and state-based data for USA.
+
 [Worldometer coronavirus cases]: Real-time data collected "directly from government's communication channels or indirectly". I don't know how accurate the datasets are, but their numbers are usually higher than all the official numbers, since official numbers are updated only once or a few fixed times a day. 
 
 [The COVID Tracking Project]: US State-by-state dataset of coronavirus cases. Includes data on number of tests performed for each state. 
+
+[Google Community Mobility Reports]: Google's aggregated mobility reports for each country and local region. Data based on location histories of Google users.
 
 [ECDC]: https://www.ecdc.europa.eu/en/covid-19-pandemic
 [Johns Hopkins Coronavirus Resource Center]: https://coronavirus.jhu.edu/
@@ -28,6 +32,8 @@ weight: -220
 [Worldometer coronavirus cases]: https://www.worldometers.info/coronavirus/
 [WHO page for coronavirus pandemic]: https://www.who.int/emergencies/diseases/novel-coronavirus-2019
 [The COVID Tracking Project]: https://covidtracking.com/
+[New York Times coronavirus maps]: https://www.nytimes.com/interactive/2020/world/coronavirus-maps.html
+[Google Community Mobility Reports]: https://www.google.com/covid19/mobility/
 
 #### Modeling sites
 
