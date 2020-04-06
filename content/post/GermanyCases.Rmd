@@ -20,7 +20,7 @@ libload<-function(...) {
         lapply(need, require, character.only=TRUE)
     }
 }
-packages <- c("data.table", "ggplot2", "dplyr", "stats", "RColorBrewer", "readr", "here")
+packages <- c("data.table", "ggplot2", "dplyr", "stats", "RColorBrewer", "readr", "here", "scales")
 libload(packages)
 
 
@@ -121,24 +121,29 @@ print(per100.plot)
 ```
 
   
-##### Number of new cases in Germany by States since March 17, 2020
-10 states with the highest number of deaths are shown, each data point is averaged over 5 consecutive days, since testing data is not consistantly reported every day. These curves show a trend of new cases growing over time, but have been flattening sooner for the states with fewer cases, and later for Baden Württemburg and Bavaria.
+##### Number of confirmed new cases in Germany by States since March 1, 2020
+
+This plot shows the increase in the number of confirmed new cases each day, each data point is averaged over 5 consecutive days. Note: This is not necessarily reflective in the increase of *actual* number of cases each day, since the number of tests for the virus has been increasing as the pandemic progressed.
+
 
 ```{r new_cases5days, echo = F, message = F, fig.width=7, fig.height=4}
 #new.cases <- read_csv(here("static", "data", "GermanyNewCases10States.csv"))
 
-newcase5.plot <- ggplot(data=states.final, aes(x=Days_100, y=Avg_5days, group=State, color=State)) +
+new5days <- states.final[states.final$Avg_5days > 0,]
+new5days$Dates <- as.Date(new5days$Dates)
+
+newcase5.plot <- ggplot(data=new5days, aes(x=Dates, y=Avg_5days, group=State, color=State)) +
             geom_line() + geom_point(size = 0.3) + scale_color_brewer(palette = 'Paired') +
-            scale_x_continuous(name='Days since >100 cases', limits=c(0,25)) + 
+            scale_x_date(name='Date', labels=date_format('%Y-%m-%d')) + 
             scale_y_continuous(name="Number of new cases") + 
             #ggtitle('Linear scale') +
-            theme_minimal()   #+ theme(axis.text.x = element_text(angle=45, hjust=0.5, vjust=0.5))
+            theme_minimal() + theme(axis.text.x = element_text(angle=60, hjust=0.5, vjust=0.5))
 
 print(newcase5.plot)
  
 ```
 
-_**April 3, 2020**: Looks like the growth curve is finally starting to flatten for Bavaria (probably needs a few more days to be certain). I sincerely hope the trend continues (since I live there)._
+
 
 <br/>
 <br/>
