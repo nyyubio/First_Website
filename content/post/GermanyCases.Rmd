@@ -30,6 +30,8 @@ cumulative.cases <- read_csv(here("static", "data", "Germany10States.csv"))
 
 ```
 
+*Last modified: 2020-04-06.*
+
 This is my attempt to visualize some SARS-CoV-2 data with some R code (please pardon the non-optimal layout). German data is obtained from the [Robert Koch Institute]. Data used from March 15-April 4, 2020 (not updated every day).
 
 [Robert Koch Institute]: https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Fallzahlen.html
@@ -167,6 +169,3 @@ print(deaths.plot)
 <br/>
 <br/>
 
-
-
-*Last modified: 2020-04-05.*
