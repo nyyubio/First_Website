@@ -30,9 +30,9 @@ cumulative.cases <- read_csv(here("static", "data", "Germany10States.csv"))
 
 ```
 
-*Last modified: 2020-04-06.*
+*Last modified: 2020-04-07.*
 
-This is my attempt to visualize some SARS-CoV-2 data with some R code (please pardon the non-optimal layout). German data is obtained from the [Robert Koch Institute]. Data used from March 15-April 4, 2020 (not updated every day).
+This is my attempt to visualize some SARS-CoV-2 data with some R code (please pardon the non-optimal layout). German data is obtained from the [Robert Koch Institute]. Data used from March 15-April 7, 2020 (not updated every day).
 
 [Robert Koch Institute]: https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Fallzahlen.html
 
@@ -105,7 +105,7 @@ print(cum.plot2)
   
 ##### Cumulative number of cases per 100,000 population
 
-This graph shows the cumulative increase of cases adjusted for the population size of each state.  Per capita, Hamburg's cases are comparable with Bavaria and Baden-Württemburg (up until April 2, 2020).
+This graph shows the cumulative increase of cases adjusted for the population size of each state.  Per capita, Hamburg's cases are comparable with Bavaria and Baden-Württemburg.
 
 ```{r cum_per100, echo = F, message = F, fig.width=7, fig.height=4}
 
@@ -148,7 +148,9 @@ print(newcase5.plot)
 <br/>
 <br/>
 
-##### Cumulative number of deaths in 10 German states with the most cases (in log scale)
+##### Cumulative number of deaths in log scale
+
+Data shown since the 5th death.
 
 ```{r cum_deaths, echo = F, message = F, fig.width=7, fig.height=4}
 #num.deaths <- read_csv(here("static", "data", "GermanyTotalDeaths10States.csv"))
