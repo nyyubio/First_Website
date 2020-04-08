@@ -30,7 +30,7 @@ cumulative.cases <- read_csv(here("static", "data", "Germany10States.csv"))
 
 ```
 
-*Last modified: 2020-04-07.*
+*Last modified: 2020-04-08.*
 
 This is my attempt to visualize some SARS-CoV-2 data with some R code (please pardon the non-optimal layout). German data is obtained from the [Robert Koch Institute]. Data used from March 15-April 7, 2020 (not updated every day).
 
@@ -107,7 +107,7 @@ print(cum.plot2)
 
 This graph shows the cumulative increase of cases adjusted for the population size of each state.  Per capita, Hamburg's cases are comparable with Bavaria and Baden-Württemburg.
 
-```{r cum_per100, echo = F, message = F, fig.width=7, fig.height=4}
+```{r cum_per100, echo = F, message = F, fig.width=8, fig.height=4}
 
 # Plot 1 == Linear scale for total number of cases
 per100.plot <- ggplot(data=states.final, aes(x=Days_100, y=Per100, group=State, color=State)) +
@@ -126,7 +126,7 @@ print(per100.plot)
 This plot shows the increase in the number of confirmed new cases each day, each data point is averaged over 5 consecutive days. Note: This is not necessarily reflective in the increase of *actual* number of cases each day, since the number of tests for the virus has been increasing as the pandemic progressed.
 
 
-```{r new_cases5days, echo = F, message = F, fig.width=7, fig.height=4}
+```{r new_cases5days, echo = F, message = F, fig.width=8, fig.height=4}
 #new.cases <- read_csv(here("static", "data", "GermanyNewCases10States.csv"))
 
 new5days <- states.final[states.final$Avg_5days > 0,]
@@ -152,7 +152,7 @@ print(newcase5.plot)
 
 Data shown since the 5th death.
 
-```{r cum_deaths, echo = F, message = F, fig.width=7, fig.height=4}
+```{r cum_deaths, echo = F, message = F, fig.width=8, fig.height=4}
 #num.deaths <- read_csv(here("static", "data", "GermanyTotalDeaths10States.csv"))
 
 # Choose all the data points for the selected countries starting from Days_5 > 0
