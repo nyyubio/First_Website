@@ -5,10 +5,21 @@
     <link>/tags/covid19/</link>
     <description>Recent content in covid19 on Coronavirus Cabin Fever</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 01 Apr 2020 18:00:00 -0100</lastBuildDate>
+    <lastBuildDate>Thu, 09 Apr 2020 18:00:00 -0100</lastBuildDate>
     
 	<atom:link href="/tags/covid19/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Comparing Coronavirus Cases in the World</title>
+      <link>/post/worldcases/</link>
+      <pubDate>Thu, 09 Apr 2020 18:00:00 -0100</pubDate>
+      
+      <guid>/post/worldcases/</guid>
+      <description>This is my attempt to visualize some SARS-CoV-2 data with some R code (please pardon the non-optimal layout). German data is obtained from ECDC. Data used from December 31, 2019-April 6, 2020 (not updated every day).
+ 
+Doubling time for new cases and deaths I chose 10 countries to compare the rates of increase (in terms of doubling time) for the number of cases and the number of deaths, similar to the [NYT case growth rate visualization].</description>
+    </item>
     
     <item>
       <title>A Snapshot of the coronavirus outbreak in Germany in April 2020</title>
@@ -16,11 +27,10 @@
       <pubDate>Wed, 01 Apr 2020 18:00:00 -0100</pubDate>
       
       <guid>/post/germanycases/</guid>
-      <description>Last modified: 2020-04-08.
+      <description>Last modified: 2020-04-11.
+Note: added Saarland data on April 11 as its cases and deaths are rising quite fast while the numbers in many other states are stabilizing.
 This is my attempt to visualize some SARS-CoV-2 data with some R code (please pardon the non-optimal layout). German data is obtained from the Robert Koch Institute. Data used from March 15-April 7, 2020 (not updated every day).
-For more extensive information about SARS-CoV-2 in Germany in English, see here.
- 
-Cumulative number of confirmed SARS-CoV-2 cases in Germany in linear scale since 100th case Only the top 10 states with the highest number of cases are plotted.</description>
+For more extensive information about SARS-CoV-2 in Germany in English, see here.</description>
     </item>
     
   </channel>

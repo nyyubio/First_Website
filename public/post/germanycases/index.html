@@ -2,19 +2,17 @@
 <html lang='en'><head>
   <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
-<meta name='description' content='Last modified: 2020-04-08.
+<meta name='description' content='Last modified: 2020-04-11.
+Note: added Saarland data on April 11 as its cases and deaths are rising quite fast while the numbers in many other states are stabilizing.
 This is my attempt to visualize some SARS-CoV-2 data with some R code (please pardon the non-optimal layout). German data is obtained from the Robert Koch Institute. Data used from March 15-April 7, 2020 (not updated every day).
-For more extensive information about SARS-CoV-2 in Germany in English, see here.
- 
-Cumulative number of confirmed SARS-CoV-2 cases in Germany in linear scale since 100th case Only the top 10 states with the highest number of cases are plotted.'>
+For more extensive information about SARS-CoV-2 in Germany in English, see here.'>
 <meta name='theme-color' content='#ffcd00'>
 
 <meta property='og:title' content='A Snapshot of the coronavirus outbreak in Germany in April 2020 • Coronavirus Cabin Fever'>
-<meta property='og:description' content='Last modified: 2020-04-08.
+<meta property='og:description' content='Last modified: 2020-04-11.
+Note: added Saarland data on April 11 as its cases and deaths are rising quite fast while the numbers in many other states are stabilizing.
 This is my attempt to visualize some SARS-CoV-2 data with some R code (please pardon the non-optimal layout). German data is obtained from the Robert Koch Institute. Data used from March 15-April 7, 2020 (not updated every day).
-For more extensive information about SARS-CoV-2 in Germany in English, see here.
- 
-Cumulative number of confirmed SARS-CoV-2 cases in Germany in linear scale since 100th case Only the top 10 states with the highest number of cases are plotted.'>
+For more extensive information about SARS-CoV-2 in Germany in English, see here.'>
 <meta property='og:url' content='/post/germanycases/'>
 <meta property='og:site_name' content='Coronavirus Cabin Fever'>
 <meta property='og:type' content='article'><meta property='article:section' content='post'><meta property='article:tag' content='covid19'><meta property='article:published_time' content='2020-04-01T18:00:00-01:00'/><meta property='article:modified_time' content='2020-04-01T18:00:00-01:00'/><meta name='twitter:card' content='summary'>
@@ -84,7 +82,7 @@ Cumulative number of confirmed SARS-CoV-2 cases in Germany in linear scale since
 
   <div class='container list-container'>
   <ul class='list taxonomy-cloud'><li>
-        <a href='/tags/covid19/' style='font-size:1em'>covid19</a>
+        <a href='/tags/covid19/' style='font-size:2em'>covid19</a>
       </li><li>
         <a href='/tags/introduction/' style='font-size:1em'>introduction</a>
       </li><li>
@@ -196,7 +194,8 @@ Cumulative number of confirmed SARS-CoV-2 cases in Germany in linear scale since
   
 
 
-<p><em>Last modified: 2020-04-08.</em></p>
+<p><em>Last modified: 2020-04-11.</em></p>
+<p><em>Note: added Saarland data on April 11 as its cases and deaths are rising quite fast while the numbers in many other states are stabilizing.</em></p>
 <p>This is my attempt to visualize some SARS-CoV-2 data with some R code (please pardon the non-optimal layout). German data is obtained from the <a href="https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Fallzahlen.html">Robert Koch Institute</a>. Data used from March 15-April 7, 2020 (not updated every day).</p>
 <p>For more extensive information about SARS-CoV-2 in Germany in English, see <a href="https://www.german-way.com/for-expats/living-in-germany/expat-how-to-guides-for-germany/coronavirus-in-germany-information/">here</a>.</p>
 <p><br/>
@@ -213,17 +212,23 @@ Cumulative number of confirmed SARS-CoV-2 cases in Germany in linear scale since
 <p>For exponential growth, the amount of time cases increase from 100 to 1000 is roughly the same as the amount of time it goes from 1000 to 10000. By showing the numbers in logarithmic plot, we can see that the growth curves are slowly bending downwards, thanks to the social distancing measures.</p>
 <p><img src="/post/GermanyCases_files/figure-html/cum_logscale-1.png" width="672" />
 <br/>
+<br/>
 <br/></p>
 </div>
 <div id="cumulative-number-of-cases-per-100000-population" class="section level5">
 <h5>Cumulative number of cases per 100,000 population</h5>
 <p>This graph shows the cumulative increase of cases adjusted for the population size of each state. Per capita, Hamburg’s cases are comparable with Bavaria and Baden-Württemburg.</p>
 <p><img src="/post/GermanyCases_files/figure-html/cum_per100-1.png" width="768" /></p>
+<p><em><strong>April 11, 2020</strong>: I had not realized at all how high Saarland’s numbers were when normalized for its population.</em></p>
+<p><br/>
+<br/>
+<br/></p>
 </div>
-<div id="number-of-confirmed-new-cases-in-germany-by-states-since-march-1-2020" class="section level5">
-<h5>Number of confirmed new cases in Germany by States since March 1, 2020</h5>
+<div id="number-of-confirmed-new-cases-in-germany-by-states-since-march-17-2020" class="section level5">
+<h5>Number of confirmed new cases in Germany by States since March 17, 2020</h5>
 <p>This plot shows the increase in the number of confirmed new cases each day, each data point is averaged over 5 consecutive days. Note: This is not necessarily reflective in the increase of <em>actual</em> number of cases each day, since the number of tests for the virus has been increasing as the pandemic progressed.</p>
 <p><img src="/post/GermanyCases_files/figure-html/new_cases5days-1.png" width="768" /></p>
+<p><em><em>April 9, 2020</em>: The graph doesn’t show it (5 day average), but the numbers seem to be going up again. Hard to say what the trend is until after Easter holidays. Are the tests processed slower during the holidays? We will see next week.</em></p>
 <p><br/>
 <br/></p>
 </div>
@@ -271,6 +276,16 @@ Cumulative number of confirmed SARS-CoV-2 cases in Germany in linear scale since
 </svg>
  Previous</span>
         <span class='screen-reader-text'>Previous post: </span>First post of the site</a>
+    </div><div class='next-entry sep-before'>
+      <a href='/post/worldcases/'>
+        <span class='screen-reader-text'>Next post: </span>Comparing Coronavirus Cases in the World<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="4" y1="12" x2="20" y2="12"/>
+  <polyline points="14 6 20 12 14 18"/>
+  
+</svg>
+</span>
+      </a>
     </div></div>
 </nav>
 

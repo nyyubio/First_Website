@@ -1,0 +1,84 @@
+---
+title: "Comparing Coronavirus Cases in the World"
+author: "Nancy Yu"
+date: "2020-04-09T18:00:00-01:00"
+categories: ["R visualization"]
+tags: ["covid19"]
+---
+
+```{r setup, include=F, message=F}
+
+knitr::opts_chunk$set(echo=TRUE, collapse = TRUE)
+
+libload<-function(...) {
+    libs<-unlist(list(...))
+    req<-unlist(lapply(libs,require,character.only=TRUE))
+    need<-libs[req==FALSE]
+    if(length(need)>0){ 
+        install.packages(need, repos = "https://ftp.fau.de/cran/")
+        lapply(need, require, character.only=TRUE)
+    }
+}
+packages <- c("data.table", "ggplot2", "dplyr", "stats", "RColorBrewer", "readr", "here", "scales")
+libload(packages)
+
+
+`%notin%` <- function(x,y) !(x %in% y) 
+
+```
+
+This is my attempt to visualize some SARS-CoV-2 data with some R code (please pardon the non-optimal layout). German data is obtained from [ECDC]. Data used from December 31, 2019-April 6, 2020 (not updated every day).
+
+[ECDC]: https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide
+
+<br/>
+<br/>
+
+##### Doubling time for new cases and deaths
+
+I chose 10 countries to compare the rates of increase (in terms of doubling time) for the number of cases and the number of deaths, similar to the [NYT case growth rate visualization].
+
+*The point of this plot is to attempt to show the shift of growth rates between the growth of new case and deaths. Note that for Italy the deaths started occurring only a few days after the start of new case reports, inidicating that they only started tracking covid-19 cases in the ICUs were filling up with covid-19 patients.*
+
+*Note: this chart is still a work in progress. I am working on improving the color scheme and layout.*
+
+[NYT visualization]: https://www.nytimes.com/interactive/2020/world/coronavirus-maps.html
+
+
+```{r cases_doubling, echo = F, message = F, warning=F, fig.width=7, fig.height=6}
+
+## Doubling time for new cases and deaths ##
+#################################################
+
+### Plot 1: Doubling times for new cases
+###         Doubling times for new deaths
+
+world.cum.cases <- read_csv(here("static", "data", "WorldCasesDeaths-10.csv"))
+
+country.codes <- unique(world.cum.cases$countryterritoryCode)
+country.n.data <- world.cum.cases[world.cum.cases$countryterritoryCode == country.codes[2],] 
+world.cum.cases$cases_doubling <- as.factor(world.cum.cases$cases_doubling )
+
+###                   darkest
+heat.colors <- c(rep('#AE017E', 3), rep('#F768A1', 3), rep('#FBB4B9',3), rep( '#FEEBE2', 3))
+names(heat.colors) <- 1:12
+
+#case.double.cols <- heat.colors[country.n.data$cases_doubling]
+
+heatcumcase.plot <- ggplot(data=world.cum.cases) +
+            geom_tile(aes(x= as.Date(dateRep), y=1, width=0.7, height = 0.5, fill= cases_doubling)) +
+            scale_fill_manual(values=heat.colors ) +
+            scale_x_date(name='Date') + 
+            theme_void() +
+            theme(axis.text.x = element_text(size = 10)) 
+#                  axis.ticks = element_blank()) 
+         
+heatcum.facet <- heatcumcase.plot + facet_grid(countryterritoryCode + case_type ~ .)
+#heatcum.country.facet <- heatcum.facet + facet_grid(countryterritoryCode ~ .)
+
+print(heatcum.facet)
+
+```
+<br/>
+<br/>
+  

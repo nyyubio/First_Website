@@ -30,7 +30,9 @@ cumulative.cases <- read_csv(here("static", "data", "Germany10States.csv"))
 
 ```
 
-*Last modified: 2020-04-08.*
+*Last modified: 2020-04-11.*
+
+*Note: added Saarland data on April 11 as its cases and deaths are rising quite fast while the numbers in many other states are stabilizing.*
 
 This is my attempt to visualize some SARS-CoV-2 data with some R code (please pardon the non-optimal layout). German data is obtained from the [Robert Koch Institute]. Data used from March 15-April 7, 2020 (not updated every day).
 
@@ -60,7 +62,7 @@ states.final <- states.filter[states.filter$State %in% states.sel & states.filte
 # Plot 1 == Linear scale for total number of cases
 cum.plot <- ggplot(data=states.final, aes(x=Days_100, y=Total_Cases, group=State, color=State)) +
             geom_line() + geom_point(size = 0.3) + scale_color_brewer(palette = 'Paired') +
-            scale_x_continuous('Days since the 100th case', limits=c(0,25)) + scale_y_continuous("Total cases") + 
+            scale_x_continuous('Days since the 100th case', limits=c(0,30)) + scale_y_continuous("Total cases") + 
             #ggtitle('Linear scale') +
             theme_minimal()
 
@@ -91,7 +93,7 @@ logminor_breaks <- rep(1:9, 21)*(10^rep(-10:10, each=9))
 
 cum.plot2 <- ggplot(data=states.final, aes(x=Days_100, y=Total_Cases, group=State, color=State)) +
   geom_line() + geom_point(size=0.3) + scale_color_brewer(palette = 'Paired') +
-  scale_x_continuous(name='Days since the 100th case', limits=c(0,25)) + 
+  scale_x_continuous(name='Days since the 100th case', limits=c(0,30)) + 
   scale_y_continuous(name="Total cases", trans = 'log10', breaks = logbreaks, minor_breaks = logminor_breaks) +
   annotation_logticks(sides="l") + 
   #ggtitle('Logarithmic scale') +
@@ -100,6 +102,7 @@ cum.plot2 <- ggplot(data=states.final, aes(x=Days_100, y=Total_Cases, group=Stat
 print(cum.plot2)
 
 ```
+<br/>
 <br/>
 <br/>
   
@@ -112,7 +115,7 @@ This graph shows the cumulative increase of cases adjusted for the population si
 # Plot 1 == Linear scale for total number of cases
 per100.plot <- ggplot(data=states.final, aes(x=Days_100, y=Per100, group=State, color=State)) +
             geom_line() + geom_point(size = 0.3) + scale_color_brewer(palette = 'Paired') +
-            scale_x_continuous('Days since 100 cases', limits=c(0,25)) + scale_y_continuous("Cumulative cases per 100,000") + 
+            scale_x_continuous('Days since 100 cases', limits=c(0,30)) + scale_y_continuous("Cumulative cases per 100,000") + 
             #ggtitle('Linear scale') +
             theme_minimal()
 
@@ -120,8 +123,14 @@ print(per100.plot)
 
 ```
 
+_**April 11, 2020**: I had not realized at all how high Saarland's numbers were when normalized for its population._
+
+<br/>
+<br/>
+<br/>
+
   
-##### Number of confirmed new cases in Germany by States since March 1, 2020
+##### Number of confirmed new cases in Germany by States since March 17, 2020
 
 This plot shows the increase in the number of confirmed new cases each day, each data point is averaged over 5 consecutive days. Note: This is not necessarily reflective in the increase of *actual* number of cases each day, since the number of tests for the virus has been increasing as the pandemic progressed.
 
@@ -137,13 +146,13 @@ newcase5.plot <- ggplot(data=new5days, aes(x=Dates, y=Avg_5days, group=State, co
             scale_x_date(name='Date', labels=date_format('%Y-%m-%d')) + 
             scale_y_continuous(name="Number of new cases") + 
             #ggtitle('Linear scale') +
-            theme_minimal() + theme(axis.text.x = element_text(angle=60, hjust=0.5, vjust=0.5))
+            theme_minimal() + theme(axis.text.x = element_text(angle=20, hjust=0.5, vjust=0.5))
 
 print(newcase5.plot)
  
 ```
 
-
+_*April 9, 2020*: The graph doesn't show it (5 day average), but the numbers seem to be going up again. Hard to say what the trend is until after Easter holidays. Are the tests processed slower during the holidays? We will see next week._ 
 
 <br/>
 <br/>
@@ -161,7 +170,7 @@ deaths.final <- states.final[states.final$DeathsDays_5 > 0,]
 # Plot 1 == Linear scale for total number of cases
 deaths.plot <- ggplot(data=deaths.final, aes(x=DeathsDays_5, y=Deaths, group=State, color=State)) +
    geom_line() + geom_point(size = 0.3) + scale_color_brewer(palette = 'Paired') +
-   scale_x_continuous('Days since the 5th death', limits=c(0,25)) + 
+   scale_x_continuous('Days since the 5th death', limits=c(0,30)) + 
    scale_y_continuous("Total Deaths", trans = 'log10', breaks = logbreaks, 
                       minor_breaks = logminor_breaks) +
    annotation_logticks(sides="l") + 
