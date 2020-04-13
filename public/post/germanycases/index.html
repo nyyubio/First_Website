@@ -2,14 +2,14 @@
 <html lang='en'><head>
   <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
-<meta name='description' content='Last modified: 2020-04-11.
+<meta name='description' content='Last modified: 2020-04-13.
 Note: added Saarland data on April 11 as its cases and deaths are rising quite fast while the numbers in many other states are stabilizing.
 This is my attempt to visualize some SARS-CoV-2 data with some R code (please pardon the non-optimal layout). German data is obtained from the Robert Koch Institute. Data used from March 15-April 7, 2020 (not updated every day).
 For more extensive information about SARS-CoV-2 in Germany in English, see here.'>
 <meta name='theme-color' content='#ffcd00'>
 
 <meta property='og:title' content='A Snapshot of the coronavirus outbreak in Germany in April 2020 • Coronavirus Cabin Fever'>
-<meta property='og:description' content='Last modified: 2020-04-11.
+<meta property='og:description' content='Last modified: 2020-04-13.
 Note: added Saarland data on April 11 as its cases and deaths are rising quite fast while the numbers in many other states are stabilizing.
 This is my attempt to visualize some SARS-CoV-2 data with some R code (please pardon the non-optimal layout). German data is obtained from the Robert Koch Institute. Data used from March 15-April 7, 2020 (not updated every day).
 For more extensive information about SARS-CoV-2 in Germany in English, see here.'>
@@ -194,7 +194,7 @@ For more extensive information about SARS-CoV-2 in Germany in English, see here.
   
 
 
-<p><em>Last modified: 2020-04-11.</em></p>
+<p><em>Last modified: 2020-04-13.</em></p>
 <p><em>Note: added Saarland data on April 11 as its cases and deaths are rising quite fast while the numbers in many other states are stabilizing.</em></p>
 <p>This is my attempt to visualize some SARS-CoV-2 data with some R code (please pardon the non-optimal layout). German data is obtained from the <a href="https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Fallzahlen.html">Robert Koch Institute</a>. Data used from March 15-April 7, 2020 (not updated every day).</p>
 <p>For more extensive information about SARS-CoV-2 in Germany in English, see <a href="https://www.german-way.com/for-expats/living-in-germany/expat-how-to-guides-for-germany/coronavirus-in-germany-information/">here</a>.</p>
@@ -203,14 +203,14 @@ For more extensive information about SARS-CoV-2 in Germany in English, see here.
 <div id="cumulative-number-of-confirmed-sars-cov-2-cases-in-germany-in-linear-scale-since-100th-case" class="section level5">
 <h5>Cumulative number of confirmed SARS-CoV-2 cases in Germany in linear scale since 100th case</h5>
 <p>Only the top 10 states with the highest number of cases are plotted.</p>
-<p><img src="/post/GermanyCases_files/figure-html/cum_linear-1.png" width="672" />
+<p><img src="/post/GermanyCases_files/figure-html/cum_linear-1.png" width="768" />
 <br/>
 <br/></p>
 </div>
 <div id="number-of-confirmed-cases-shown-in-logarithmic-scale" class="section level5">
 <h5>Number of confirmed cases shown in logarithmic scale</h5>
 <p>For exponential growth, the amount of time cases increase from 100 to 1000 is roughly the same as the amount of time it goes from 1000 to 10000. By showing the numbers in logarithmic plot, we can see that the growth curves are slowly bending downwards, thanks to the social distancing measures.</p>
-<p><img src="/post/GermanyCases_files/figure-html/cum_logscale-1.png" width="672" />
+<p><img src="/post/GermanyCases_files/figure-html/cum_logscale-1.png" width="768" />
 <br/>
 <br/>
 <br/></p>
@@ -226,16 +226,26 @@ For more extensive information about SARS-CoV-2 in Germany in English, see here.
 </div>
 <div id="number-of-confirmed-new-cases-in-germany-by-states-since-march-17-2020" class="section level5">
 <h5>Number of confirmed new cases in Germany by States since March 17, 2020</h5>
-<p>This plot shows the increase in the number of confirmed new cases each day, each data point is averaged over 5 consecutive days. Note: This is not necessarily reflective in the increase of <em>actual</em> number of cases each day, since the number of tests for the virus has been increasing as the pandemic progressed.</p>
+<p>This plot shows the increase in the number of confirmed new cases. Each data point is averaged over 5 previous consecutive days. Note: This is not necessarily reflective in the increase of <em>actual</em> number of cases each day, since the number of tests for the virus has been increasing as the pandemic progressed.</p>
 <p><img src="/post/GermanyCases_files/figure-html/new_cases5days-1.png" width="768" /></p>
 <p><em><em>April 9, 2020</em>: The graph doesn’t show it (5 day average), but the numbers seem to be going up again. Hard to say what the trend is until after Easter holidays. Are the tests processed slower during the holidays? We will see next week.</em></p>
 <p><br/>
+<br/>
 <br/></p>
 </div>
 <div id="cumulative-number-of-deaths-in-log-scale" class="section level5">
 <h5>Cumulative number of deaths in log scale</h5>
 <p>Data shown since the 5th death.</p>
 <p><img src="/post/GermanyCases_files/figure-html/cum_deaths-1.png" width="768" /></p>
+<p><br/>
+<br/>
+<br/></p>
+</div>
+<div id="number-of-confirmed-new-deaths-since-march-202020" class="section level5">
+<h5>Number of confirmed new deaths since March 20,2020</h5>
+<p>This plot shows the increase in the number of confirmed deaths. Each data point is averaged over past 5 consecutive days.</p>
+<p><img src="/post/GermanyCases_files/figure-html/deaths_5days-1.png" width="768" /></p>
+<p><em><strong>April 12, 2020</strong>: Note: I am not sure if the decrease in deaths is real or if fewer cases and deaths are reported over the Easter long weekeend.</em></p>
 <p><br/>
 <br/>
 <br/></p>

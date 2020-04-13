@@ -4,6 +4,7 @@ author: "Nancy Yu"
 date: "2020-04-01T18:00:00-01:00"
 categories: ["R visualization"]
 tags: ["covid19"]
+
 ---
 
 
@@ -30,7 +31,7 @@ cumulative.cases <- read_csv(here("static", "data", "Germany10States.csv"))
 
 ```
 
-*Last modified: 2020-04-11.*
+*Last modified: 2020-04-13.*
 
 *Note: added Saarland data on April 11 as its cases and deaths are rising quite fast while the numbers in many other states are stabilizing.*
 
@@ -48,7 +49,7 @@ For more extensive information about SARS-CoV-2 in Germany in English, see [here
 Only the top 10 states with the highest number of cases are plotted.
 
 
-```{r cum_linear, echo = F, message = F, fig.width=7, fig.height=4}
+```{r cum_linear, echo = F, message = F, fig.width=8, fig.height=5, dpi = 96}
 
 ## 10 States with the highest cumulative cases ##
 #################################################
@@ -77,7 +78,7 @@ print(cum.plot)
 For exponential growth, the amount of time cases increase from 100 to 1000 is roughly the same as the amount of time it goes from 1000 to 10000. By showing the numbers in logarithmic plot, we can see that the growth curves are slowly bending downwards, thanks to the social distancing measures. 
 
 
-```{r cum_logscale, echo = F, message=F, fig.width=7, fig.height=4}
+```{r cum_logscale, echo = F, message=F, fig.width=8, fig.height=5, dpi=96}
 
 ## Logarithmic scale ##
 #######################
@@ -110,7 +111,7 @@ print(cum.plot2)
 
 This graph shows the cumulative increase of cases adjusted for the population size of each state.  Per capita, Hamburg's cases are comparable with Bavaria and Baden-Württemburg.
 
-```{r cum_per100, echo = F, message = F, fig.width=8, fig.height=4}
+```{r cum_per100, echo = F, message = F, fig.width=8, fig.height=5, dpi = 96}
 
 # Plot 1 == Linear scale for total number of cases
 per100.plot <- ggplot(data=states.final, aes(x=Days_100, y=Per100, group=State, color=State)) +
@@ -132,10 +133,10 @@ _**April 11, 2020**: I had not realized at all how high Saarland's numbers were 
   
 ##### Number of confirmed new cases in Germany by States since March 17, 2020
 
-This plot shows the increase in the number of confirmed new cases each day, each data point is averaged over 5 consecutive days. Note: This is not necessarily reflective in the increase of *actual* number of cases each day, since the number of tests for the virus has been increasing as the pandemic progressed.
+This plot shows the increase in the number of confirmed new cases. Each data point is averaged over 5 previous consecutive days. Note: This is not necessarily reflective in the increase of *actual* number of cases each day, since the number of tests for the virus has been increasing as the pandemic progressed.
 
 
-```{r new_cases5days, echo = F, message = F, fig.width=8, fig.height=4}
+```{r new_cases5days, echo = F, message = F, fig.width=8, fig.height=5, dpi=96}
 #new.cases <- read_csv(here("static", "data", "GermanyNewCases10States.csv"))
 
 new5days <- states.final[states.final$Avg_5days > 0,]
@@ -144,7 +145,7 @@ new5days$Dates <- as.Date(new5days$Dates)
 newcase5.plot <- ggplot(data=new5days, aes(x=Dates, y=Avg_5days, group=State, color=State)) +
             geom_line() + geom_point(size = 0.3) + scale_color_brewer(palette = 'Paired') +
             scale_x_date(name='Date', labels=date_format('%Y-%m-%d')) + 
-            scale_y_continuous(name="Number of new cases") + 
+            scale_y_continuous(name="Number of new cases (averaged over 5 days)") + 
             #ggtitle('Linear scale') +
             theme_minimal() + theme(axis.text.x = element_text(angle=20, hjust=0.5, vjust=0.5))
 
@@ -156,12 +157,13 @@ _*April 9, 2020*: The graph doesn't show it (5 day average), but the numbers see
 
 <br/>
 <br/>
+<br/>
 
 ##### Cumulative number of deaths in log scale
 
 Data shown since the 5th death.
 
-```{r cum_deaths, echo = F, message = F, fig.width=8, fig.height=4}
+```{r cum_deaths, echo = F, message = F, fig.width=8, fig.height=5, dpi=96}
 #num.deaths <- read_csv(here("static", "data", "GermanyTotalDeaths10States.csv"))
 
 # Choose all the data points for the selected countries starting from Days_5 > 0
@@ -180,6 +182,34 @@ deaths.plot <- ggplot(data=deaths.final, aes(x=DeathsDays_5, y=Deaths, group=Sta
 print(deaths.plot)
 
 ```
+
+<br/>
+<br/>
+<br/>
+
+##### Number of confirmed new deaths since March 20,2020
+
+This plot shows the increase in the number of confirmed deaths. Each data point is averaged over past 5 consecutive days. 
+
+```{r deaths_5days, echo = F, message = F, fig.width=8, fig.height=5, dpi=96}
+#new.cases <- read_csv(here("static", "data", "GermanyNewCases10States.csv"))
+
+states.final$Dates <- as.Date(states.final$Dates)
+death5days <- states.final
+death5days <- death5days[death5days$Dates >= as.Date('2020-03-20'),]
+
+death5days.plot <- ggplot(data=death5days, aes(x=Dates, y=Death_5days, group=State, color=State)) +
+            geom_line() + geom_point(size = 0.3) + scale_color_brewer(palette = 'Paired') +
+            scale_x_date(name='Date', labels=date_format('%Y-%m-%d')) + 
+            scale_y_continuous(name="Number of new deaths (averaged over 5 days)") + 
+            #ggtitle('Linear scale') +
+            theme_minimal() + theme(axis.text.x = element_text(angle=20, hjust=0.5, vjust=0.5))
+
+print(death5days.plot)
+ 
+```
+
+_**April 12, 2020**: Note: I am not sure if the decrease in deaths is real or if fewer cases and deaths are reported over the Easter long weekeend._
 
 <br/>
 <br/>
