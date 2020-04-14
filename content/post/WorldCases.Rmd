@@ -27,7 +27,9 @@ libload(packages)
 
 ```
 
-This is my attempt to visualize some SARS-CoV-2 data with some R code (please pardon the non-optimal layout). German data is obtained from [ECDC]. Data used from December 31, 2019-April 6, 2020 (not updated every day).
+*Last modified: 2020-04-14.*
+
+This is my attempt to visualize some SARS-CoV-2 data with some R code (please pardon the non-optimal layout). German data is obtained from [ECDC]. Data used from December 31, 2019-April 14, 2020 (not updated every day).
 
 [ECDC]: https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide
 
@@ -45,7 +47,7 @@ I chose 10 countries to compare the rates of increase (in terms of doubling time
 [NYT visualization]: https://www.nytimes.com/interactive/2020/world/coronavirus-maps.html
 
 
-```{r cases_doubling, echo = F, message = F, warning=F, fig.width=7, fig.height=6}
+```{r cases_doubling, echo = F, message = F, warning=F, fig.width=8, fig.height=6, dpi=96}
 
 ## Doubling time for new cases and deaths ##
 #################################################
@@ -59,13 +61,15 @@ country.codes <- unique(world.cum.cases$countryterritoryCode)
 country.n.data <- world.cum.cases[world.cum.cases$countryterritoryCode == country.codes[2],] 
 world.cum.cases$cases_doubling <- as.factor(world.cum.cases$cases_doubling )
 
+world.cases.use <- world.cum.cases[ as.Date(world.cum.cases$dateRep) > as.Date('2020-01-31'),]
+
 ###                   darkest
 heat.colors <- c(rep('#AE017E', 3), rep('#F768A1', 3), rep('#FBB4B9',3), rep( '#FEEBE2', 3))
 names(heat.colors) <- 1:12
 
 #case.double.cols <- heat.colors[country.n.data$cases_doubling]
 
-heatcumcase.plot <- ggplot(data=world.cum.cases) +
+heatcumcase.plot <- ggplot(data=world.cases.use) +
             geom_tile(aes(x= as.Date(dateRep), y=1, width=0.7, height = 0.5, fill= cases_doubling)) +
             scale_fill_manual(values=heat.colors ) +
             scale_x_date(name='Date') + 
