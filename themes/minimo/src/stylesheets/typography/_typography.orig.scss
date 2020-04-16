@@ -6,7 +6,7 @@ body {
   word-wrap: break-word;
 
   @include screen($breakpoint-small) {
-    @include font-size($font-size__main * 1.1);
+    @include font-size($font-size__main * 1.125);
   }
 }
 

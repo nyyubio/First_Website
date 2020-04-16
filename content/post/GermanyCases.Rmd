@@ -31,7 +31,7 @@ cumulative.cases <- read_csv(here("static", "data", "Germany10States.csv"))
 
 ```
 
-*Last modified: 2020-04-14.*
+*Last modified: 2020-04-16.*  
 
 *Note: added Saarland data on April 11 as its cases and deaths are rising quite fast while the numbers in many other states are stabilizing.*
 
@@ -210,6 +210,7 @@ print(death5days.plot)
 ```
 
 _**April 12, 2020**: Note: I am not sure if the decrease in deaths is real or if fewer cases and deaths are reported over the Easter long weekeend._
+_**April 16, 2020**: Sure enough, the rates of reported deaths went back up on work days. However, given that the rates of deaths lag behind the rates of confirmed new cases, I expect these numbers to go down for real next week._
 
 <br/>
 <br/>
