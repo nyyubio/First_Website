@@ -1,4 +1,4 @@
-baseURL = "http://www.example.com"
+baseURL = "http://coronafever.netlify.app"
 title = "Coronavirus Cabin Fever"
 # for smart copyright line, leave this blank and check [params.copyright]
 copyright = ""
@@ -41,8 +41,8 @@ suffix = ""
 
 [params.settings]
 # date & time format: https://golang.org/pkg/time/
-dateFormat = "2006, Jan 02"
-listDateFormat = "2006, Jan 02"
+dateFormat = "January 02, 2006"
+listDateFormat = "January 02, 2006"
 archiveDateFormat = "Jan 02"
 hideEntryNavigation = ["page"] # boolean / array of sections
 hideEntryMeta = ["page"] # boolean / array of sections
@@ -52,6 +52,7 @@ taxonomyCloudShuffle = true
 accentColor = "#ffcd00"
 hideMainMenu = false
 rtl = false
+
 
 [params.sidebar]
 enable = true

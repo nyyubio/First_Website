@@ -31,7 +31,7 @@ cumulative.cases <- read_csv(here("static", "data", "Germany10States.csv"))
 
 ```
 
-*Last modified: 2020-04-16.*  
+*Last modified: 2020-04-18.*  
 
 *Note: added Saarland data on April 11 as its cases and deaths are rising quite fast while the numbers in many other states are stabilizing.*
 
@@ -63,7 +63,7 @@ states.final <- states.filter[states.filter$State %in% states.sel & states.filte
 # Plot 1 == Linear scale for total number of cases
 cum.plot <- ggplot(data=states.final, aes(x=Days_100, y=Total_Cases, group=State, color=State)) +
             geom_line() + geom_point(size = 0.3) + scale_color_brewer(palette = 'Paired') +
-            scale_x_continuous('Days since the 100th case', limits=c(0,35)) + scale_y_continuous("Total cases") + 
+            scale_x_continuous('Days since the 100th case', limits=c(0,40)) + scale_y_continuous("Total cases") + 
             #ggtitle('Linear scale') +
             theme_minimal()
 
@@ -94,7 +94,7 @@ logminor_breaks <- rep(1:9, 21)*(10^rep(-10:10, each=9))
 
 cum.plot2 <- ggplot(data=states.final, aes(x=Days_100, y=Total_Cases, group=State, color=State)) +
   geom_line() + geom_point(size=0.3) + scale_color_brewer(palette = 'Paired') +
-  scale_x_continuous(name='Days since the 100th case', limits=c(0,35)) + 
+  scale_x_continuous(name='Days since the 100th case', limits=c(0,40)) + 
   scale_y_continuous(name="Total cases", trans = 'log10', breaks = logbreaks, minor_breaks = logminor_breaks) +
   annotation_logticks(sides="l") + 
   #ggtitle('Logarithmic scale') +
@@ -116,7 +116,7 @@ This graph shows the cumulative increase of cases adjusted for the population si
 # Plot 1 == Linear scale for total number of cases
 per100.plot <- ggplot(data=states.final, aes(x=Days_100, y=Per100, group=State, color=State)) +
             geom_line() + geom_point(size = 0.3) + scale_color_brewer(palette = 'Paired') +
-            scale_x_continuous('Days since 100 cases', limits=c(0,35)) + scale_y_continuous("Cumulative cases per 100,000") + 
+            scale_x_continuous('Days since 100 cases', limits=c(0,40)) + scale_y_continuous("Cumulative cases per 100,000") + 
             #ggtitle('Linear scale') +
             theme_minimal()
 
@@ -153,7 +153,8 @@ print(newcase5.plot)
  
 ```
 
-_*April 9, 2020*: The graph doesn't show it (5 day average), but the numbers seem to be going up again. Hard to say what the trend is until after Easter holidays. Are the tests processed slower during the holidays? We will see next week._ 
+_**April 9, 2020**: The graph doesn't show it (5 day average), but the numbers seem to be going up again. Hard to say what the trend is until after Easter holidays. Are the tests processed slower during the holidays? We will see next week._ 
+_**April 18, 2020**: I really don't like that the number of new cases are creeping back up this week for most of the states._
 
 <br/>
 <br/>
@@ -172,7 +173,7 @@ deaths.final <- states.final[states.final$DeathsDays_5 > 0,]
 # Plot 1 == Linear scale for total number of cases
 deaths.plot <- ggplot(data=deaths.final, aes(x=DeathsDays_5, y=Deaths, group=State, color=State)) +
    geom_line() + geom_point(size = 0.3) + scale_color_brewer(palette = 'Paired') +
-   scale_x_continuous('Days since the 5th death', limits=c(0,35)) + 
+   scale_x_continuous('Days since the 5th death', limits=c(0,40)) + 
    scale_y_continuous("Total Deaths", trans = 'log10', breaks = logbreaks, 
                       minor_breaks = logminor_breaks) +
    annotation_logticks(sides="l") + 
@@ -211,7 +212,7 @@ print(death5days.plot)
 
 _**April 12, 2020**: Note: I am not sure if the decrease in deaths is real or if fewer cases and deaths are reported over the Easter long weekeend._
 
-_**April 16, 2020**: Sure enough, the rates of reported deaths went back up on work days. However, given that the rates of deaths lag behind the rates of confirmed new cases, I expect these numbers to go down for real next week._
+_**April 16, 2020**: Sure enough, the rates of reported deaths went back up on work days. However, given that the rates of deaths lag behind the rates of confirmed new cases, I expect/hope these numbers to go down for real next week._
 
 <br/>
 <br/>

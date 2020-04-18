@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>javascript on Coronavirus Cabin Fever</title>
+    <link>/tags/javascript/</link>
+    <description>Recent content in javascript on Coronavirus Cabin Fever</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 16 Apr 2020 17:20:00 +0200</lastBuildDate>
+    
+	<atom:link href="/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Visualizing new cases using interactive charts</title>
+      <link>/post/newcases/</link>
+      <pubDate>Thu, 16 Apr 2020 17:20:00 +0200</pubDate>
+      
+      <guid>/post/newcases/</guid>
+      <description>Testing pie chart
+Hello 123</description>
+    </item>
+    
+  </channel>
+</rss>
