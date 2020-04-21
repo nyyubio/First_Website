@@ -31,7 +31,7 @@ cumulative.cases <- read_csv(here("static", "data", "Germany10States.csv"))
 
 ```
 
-*Last modified: 2020-04-18.*  
+*Last modified: 2020-04-21.*  
 
 *Note: added Saarland data on April 11 as its cases and deaths are rising quite fast while the numbers in many other states are stabilizing.*
 
@@ -67,7 +67,7 @@ cum.plot <- ggplot(data=states.final, aes(x=Days_100, y=Total_Cases, group=State
             #ggtitle('Linear scale') +
             theme_minimal()
 
-print(cum.plot)
+print(cum.plot) 
 
 ```
 <br/>
@@ -154,6 +154,7 @@ print(newcase5.plot)
 ```
 
 _**April 9, 2020**: The graph doesn't show it (5 day average), but the numbers seem to be going up again. Hard to say what the trend is until after Easter holidays. Are the tests processed slower during the holidays? We will see next week._ 
+
 _**April 18, 2020**: I really don't like that the number of new cases are creeping back up this week for most of the states._
 
 <br/>
