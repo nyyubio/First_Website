@@ -9,7 +9,7 @@ tags: ["covid19"]
 
 
 
-<p><em>Last modified: 2020-04-21.</em></p>
+<p><em>Last modified: 2020-04-23.</em></p>
 <p><em>Note: added Saarland data on April 11 as its cases and deaths are rising quite fast while the numbers in many other states are stabilizing.</em></p>
 <p>This is my attempt to visualize some SARS-CoV-2 data with some R code (please pardon the non-optimal layout). German data is obtained from the <a href="https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Fallzahlen.html">Robert Koch Institute</a>. Data used from March 15-April 7, 2020 (not updated every day).</p>
 <p>For more extensive information about SARS-CoV-2 in Germany in English, see <a href="https://www.german-way.com/for-expats/living-in-germany/expat-how-to-guides-for-germany/coronavirus-in-germany-information/">here</a>.</p>
@@ -41,9 +41,10 @@ tags: ["covid19"]
 </div>
 <div id="number-of-confirmed-new-cases-in-germany-by-states-since-march-17-2020" class="section level5">
 <h5>Number of confirmed new cases in Germany by States since March 17, 2020</h5>
-<p>This plot shows the increase in the number of confirmed new cases. Each data point is averaged over 5 previous consecutive days. Note: This is not necessarily reflective in the increase of <em>actual</em> number of cases each day, since the number of tests for the virus has been increasing as the pandemic progressed.</p>
+<p>This plot shows the increase in the number of confirmed new cases. Each data point is averaged over 7 previous consecutive days . Note: This is not necessarily reflective in the increase of <em>actual</em> number of cases each day, since the number of tests for the virus has been increasing as the pandemic progressed.</p>
+<p><em><strong>April 22, 2020</strong>: Modified rolling 5 day average to 7 days to smooth out the curves more.</em></p>
 <p><img src="/post/GermanyCases_files/figure-html/new_cases5days-1.png" width="768" /></p>
-<p><em><strong>April 9, 2020</strong>: The graph doesn’t show it (5 day average), but the numbers seem to be going up again. Hard to say what the trend is until after Easter holidays. Are the tests processed slower during the holidays? We will see next week.</em></p>
+<p><em><strong>April 9, 2020</strong>: The graph doesn’t show it (5 day average, later changed to 7 day average), but the numbers seem to be going up again. Hard to say what the trend is until after Easter holidays. Are the tests processed slower during the holidays? We will see next week.</em></p>
 <p><em><strong>April 18, 2020</strong>: I really don’t like that the number of new cases are creeping back up this week for most of the states.</em></p>
 <p><br/>
 <br/>
@@ -57,10 +58,10 @@ tags: ["covid19"]
 <br/>
 <br/></p>
 </div>
-<div id="number-of-confirmed-new-deaths-since-march-202020" class="section level5">
-<h5>Number of confirmed new deaths since March 20,2020</h5>
-<p>This plot shows the increase in the number of confirmed deaths. Each data point is averaged over past 5 consecutive days.</p>
-<p><img src="/post/GermanyCases_files/figure-html/deaths_5days-1.png" width="768" /></p>
+<div id="number-of-confirmed-new-deaths-since-march-212020" class="section level5">
+<h5>Number of confirmed new deaths since March 21,2020</h5>
+<p>This plot shows the increase in the number of confirmed deaths. Each data point is averaged over past 7 consecutive days. <em>(modified from 5-day average to 7 days on April 25,2020).</em></p>
+<p><img src="/post/GermanyCases_files/figure-html/deaths_7days-1.png" width="768" /></p>
 <p><em><strong>April 12, 2020</strong>: Note: I am not sure if the decrease in deaths is real or if fewer cases and deaths are reported over the Easter long weekeend.</em></p>
 <p><em><strong>April 16, 2020</strong>: Sure enough, the rates of reported deaths went back up on work days. However, given that the rates of deaths lag behind the rates of confirmed new cases, I expect/hope these numbers to go down for real next week.</em></p>
 <p><br/>
