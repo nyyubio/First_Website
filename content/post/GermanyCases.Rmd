@@ -31,7 +31,7 @@ cumulative.cases <- read_csv(here("static", "data", "Germany10States.csv"))
 
 ```
 
-*Last modified: 2020-04-30.*
+*Last modified: 2020-05-02.*
 
 *Note: added Saarland data on April 11 as its cases and deaths are rising quite fast while the numbers in many other states are stabilizing.*
 
