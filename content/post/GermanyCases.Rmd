@@ -31,7 +31,7 @@ cumulative.cases <- read_csv(here("static", "data", "Germany10States.csv"))
 
 ```
 
-*Last modified: 2020-05-02.*
+*Last modified: 2020-05-05.*
 
 *Note: added Saarland data on April 11 as its cases and deaths are rising quite fast while the numbers in many other states are stabilizing.*
 
@@ -63,7 +63,7 @@ states.final <- states.filter[states.filter$State %in% states.sel & states.filte
 # Plot 1 == Linear scale for total number of cases
 cum.plot <- ggplot(data=states.final, aes(x=Days_100, y=Total_Cases, group=State, color=State)) +
             geom_line() + geom_point(size = 0.3) + scale_color_brewer(palette = 'Paired') +
-            scale_x_continuous('Days since the 100th case', limits=c(0,50)) + scale_y_continuous("Total cases") + 
+            scale_x_continuous('Days since the 100th case', limits=c(0,55)) + scale_y_continuous("Total cases") + 
             #ggtitle('Linear scale') +
             theme_minimal()
 
@@ -94,7 +94,7 @@ logminor_breaks <- rep(1:9, 21)*(10^rep(-10:10, each=9))
 
 cum.plot2 <- ggplot(data=states.final, aes(x=Days_100, y=Total_Cases, group=State, color=State)) +
   geom_line() + geom_point(size=0.3) + scale_color_brewer(palette = 'Paired') +
-  scale_x_continuous(name='Days since the 100th case', limits=c(0,50)) + 
+  scale_x_continuous(name='Days since the 100th case', limits=c(0,55)) + 
   scale_y_continuous(name="Total cases", trans = 'log10', breaks = logbreaks, minor_breaks = logminor_breaks) +
   annotation_logticks(sides="l") + 
   #ggtitle('Logarithmic scale') +
@@ -116,7 +116,7 @@ This graph shows the cumulative increase of cases adjusted for the population si
 # Plot 1 == Linear scale for total number of cases
 per100.plot <- ggplot(data=states.final, aes(x=Days_100, y=Per100, group=State, color=State)) +
             geom_line() + geom_point(size = 0.3) + scale_color_brewer(palette = 'Paired') +
-            scale_x_continuous('Days since 100 cases', limits=c(0,50)) + scale_y_continuous("Cumulative cases per 100,000") + 
+            scale_x_continuous('Days since 100 cases', limits=c(0,55)) + scale_y_continuous("Cumulative cases per 100,000") + 
             #ggtitle('Linear scale') +
             theme_minimal()
 
@@ -175,7 +175,7 @@ deaths.final <- states.final[states.final$DeathsDays_5 > 0,]
 # Plot 1 == Linear scale for total number of cases
 deaths.plot <- ggplot(data=deaths.final, aes(x=DeathsDays_5, y=Deaths, group=State, color=State)) +
    geom_line() + geom_point(size = 0.3) + scale_color_brewer(palette = 'Paired') +
-   scale_x_continuous('Days since the 5th death', limits=c(0,50)) + 
+   scale_x_continuous('Days since the 5th death', limits=c(0,55)) + 
    scale_y_continuous("Total Deaths", trans = 'log10', breaks = logbreaks, 
                       minor_breaks = logminor_breaks) +
    annotation_logticks(sides="l") + 
