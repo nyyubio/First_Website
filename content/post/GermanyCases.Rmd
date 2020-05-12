@@ -36,11 +36,10 @@ colors16 <- c('#A6CEE3', '#1F78B4', '#B2DF8A', '#33A02C',
 
 ```
 
-*Last modified: 2020-05-09.*
+*Last modified: 2020-05-12.*    
 
 _**May 9, 2020**: Added data for all 16 states for all graphs._
 
-*Note: added Saarland data on April 11 as its cases and deaths are rising quite fast while the numbers in many other states are stabilizing.*
 
 This is my attempt to visualize some SARS-CoV-2 data with some R code (please pardon the non-optimal layout). German data is obtained from the [Robert Koch Institute]. Data used from March 15-April 7, 2020 (not updated every day).
 
@@ -53,8 +52,6 @@ For more extensive information about SARS-CoV-2 in Germany in English, see [here
 <br/>
 
 ##### Cumulative number of confirmed SARS-CoV-2 cases in Germany in linear scale since 100th case
-Only the top 10 states with the highest number of cases are plotted.
-
 
 ```{r cum_linear, echo = F, message = F, warning=F, fig.width=8, fig.height=5, dpi = 96}
 
@@ -73,7 +70,7 @@ cum.plot <- ggplot(data=states.final, aes(x=Days_100, y=Total_Cases, group=State
             geom_line() + geom_point(size = 0.4) +     
           #  scale_color_brewer(palette = 'Paired') + 
             scale_colour_manual(name= "State", values= colors16) +
-            scale_x_continuous('Days since the 100th case', limits=c(0,55)) + 
+            scale_x_continuous('Days since the 100th case', limits=c(0,60)) + 
             scale_y_continuous("Total cases") + 
             #ggtitle('Linear scale') +
             theme_minimal()
@@ -107,7 +104,7 @@ cum.plot2 <- ggplot(data=states.final, aes(x=Days_100, y=Total_Cases, group=Stat
              geom_line() + geom_point(size=0.4) + 
           #   scale_color_brewer(palette = 'Paired') +
              scale_colour_manual(name= "State", values= colors16) +
-             scale_x_continuous(name='Days since the 100th case', limits=c(0,55)) + 
+             scale_x_continuous(name='Days since the 100th case', limits=c(0,60)) + 
              scale_y_continuous(name="Total cases", trans = 'log10', breaks = logbreaks, minor_breaks = logminor_breaks) +
              annotation_logticks(sides="l") + 
              #ggtitle('Logarithmic scale') +
@@ -141,7 +138,7 @@ per100.plot <- ggplot(data=states16.final, aes(x=Days_100, y=Per100, group=State
             geom_line() + geom_point(size = 0.4) + 
             # scale_color_brewer(palette = 'Paired') +
             scale_colour_manual(name= "State", values= colors16) +
-            scale_x_continuous('Days since 100 cases', limits=c(0,55)) + 
+            scale_x_continuous('Days since 100 cases', limits=c(0,60)) + 
             scale_y_continuous("Cumulative cases per 100,000") + 
             #ggtitle('Linear scale') +
             theme_minimal()
@@ -160,6 +157,10 @@ _**April 11, 2020**: I had not realized at all how high Saarland's numbers were 
 ##### Number of confirmed new cases in Germany by States since March 17, 2020
 
 This plot shows the increase in the number of confirmed new cases. Each data point is averaged over 7 previous consecutive days . Note: This is not necessarily reflective in the increase of *actual* number of cases each day, since the number of tests for the virus has been increasing as the pandemic progressed.
+
+_**April 9, 2020**: The graph doesn't show it (5 day average, later changed to 7 day average), but the numbers seem to be going up again. Hard to say what the trend is until after Easter holidays. Are the tests processed slower during the holidays? We will see next week._ 
+
+_**April 18, 2020**: I really don't like that the number of new cases are creeping back up this week for most of the states._
 
 _**April 22, 2020**: Modified rolling 5 day average to 7 days to smooth out the curves more._
 
@@ -182,9 +183,6 @@ print(newcase7.plot)
  
 ```
 
-_**April 9, 2020**: The graph doesn't show it (5 day average, later changed to 7 day average), but the numbers seem to be going up again. Hard to say what the trend is until after Easter holidays. Are the tests processed slower during the holidays? We will see next week._ 
-
-_**April 18, 2020**: I really don't like that the number of new cases are creeping back up this week for most of the states._
 
 <br/>
 <br/>
@@ -205,7 +203,7 @@ deaths.plot <- ggplot(data=deaths.final, aes(x=DeathsDays_5, y=Deaths, group=Sta
    geom_line() + geom_point(size = 0.3) + 
   # scale_color_brewer(palette = 'Paired') +
    scale_colour_manual(name= "State", values= colors16) +
-   scale_x_continuous('Days since the 5th death', limits=c(0,55)) + 
+   scale_x_continuous('Days since the 5th death', limits=c(0,60)) + 
    scale_y_continuous("Total Deaths", trans = 'log10', breaks = logbreaks, 
                       minor_breaks = logminor_breaks) +
    annotation_logticks(sides="l") + 
@@ -223,6 +221,11 @@ print(deaths.plot)
 ##### Number of confirmed new deaths since March 21,2020
 
 This plot shows the increase in the number of confirmed deaths. Each data point is averaged over past 7 consecutive days. *(modified from 5-day average to 7 days on April 25,2020).* 
+
+_**April 12, 2020**: Note: I am not sure if the decrease in deaths is real or if fewer cases and deaths are reported over the Easter long weekeend._
+
+_**April 16, 2020**: Sure enough, the rates of reported deaths went back up on work days. However, given that the rates of deaths lag behind the rates of confirmed new cases, I expect/hope these numbers to go down for real next week._
+
 
 ```{r deaths_7days, echo = F, message = F, warning=F, fig.width=8, fig.height=5, dpi=96}
 #new.cases <- read_csv(here("static", "data", "GermanyNewCases10States.csv"))
@@ -244,9 +247,6 @@ print(death7days.plot)
  
 ```
 
-_**April 12, 2020**: Note: I am not sure if the decrease in deaths is real or if fewer cases and deaths are reported over the Easter long weekeend._
-
-_**April 16, 2020**: Sure enough, the rates of reported deaths went back up on work days. However, given that the rates of deaths lag behind the rates of confirmed new cases, I expect/hope these numbers to go down for real next week._
 
 <br/>
 <br/>
