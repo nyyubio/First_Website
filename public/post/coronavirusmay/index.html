@@ -2,25 +2,19 @@
 <html lang='en'><head>
   <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
-<meta name='description' content='Last modified: 2020-04-14.
-This is my attempt to visualize some SARS-CoV-2 data with some R code (please pardon the non-optimal layout). German data is obtained from ECDC. Data used from December 31, 2019-April 14, 2020 (not updated every day).
- 
-Doubling time for new cases and deaths I chose 10 countries to compare the rates of increase (in terms of doubling time) for the number of cases and the number of deaths, similar to the [NYT case growth rate visualization].'>
+<meta name='description' content='Questions regarding coronavirus It has been nearly 2 months since I started this website. I have been mostly staying at home, applying for jobs, and following the coronavirus pandemic development pretty closely. As of May 14, many countries in Europe have started to ease the lockdown measures. Countries with a lot of cases, such as Spain, Italy, France, Belgium etc. have since large drops in numbers of new cases and deaths per day.'>
 <meta name='theme-color' content='#ffcd00'>
 
-<meta property='og:title' content='Comparing Coronavirus Cases in the World • Coronavirus Cabin Fever'>
-<meta property='og:description' content='Last modified: 2020-04-14.
-This is my attempt to visualize some SARS-CoV-2 data with some R code (please pardon the non-optimal layout). German data is obtained from ECDC. Data used from December 31, 2019-April 14, 2020 (not updated every day).
- 
-Doubling time for new cases and deaths I chose 10 countries to compare the rates of increase (in terms of doubling time) for the number of cases and the number of deaths, similar to the [NYT case growth rate visualization].'>
-<meta property='og:url' content='/post/worldcases/'>
+<meta property='og:title' content='Covid-19 development in May • Nancy Yu'>
+<meta property='og:description' content='Questions regarding coronavirus It has been nearly 2 months since I started this website. I have been mostly staying at home, applying for jobs, and following the coronavirus pandemic development pretty closely. As of May 14, many countries in Europe have started to ease the lockdown measures. Countries with a lot of cases, such as Spain, Italy, France, Belgium etc. have since large drops in numbers of new cases and deaths per day.'>
+<meta property='og:url' content='/post/coronavirusmay/'>
 <meta property='og:site_name' content='Coronavirus Cabin Fever'>
-<meta property='og:type' content='article'><meta property='article:section' content='post'><meta property='article:tag' content='covid19'><meta property='article:published_time' content='2020-04-09T18:00:00-01:00'/><meta property='article:modified_time' content='2020-04-09T18:00:00-01:00'/><meta name='twitter:card' content='summary'>
+<meta property='og:type' content='article'><meta property='og:image' content='https://www.gravatar.com/avatar/092545da3c8029216bc95cf8473d187e?s=256'><meta property='article:section' content='post'><meta property='article:tag' content='covid19'><meta property='article:published_time' content='2020-05-14T16:20:00&#43;02:00'/><meta property='article:modified_time' content='2020-05-14T16:20:00&#43;02:00'/><meta name='twitter:card' content='summary'><meta name='twitter:creator' content='@ynancy'>
 
 <meta name="generator" content="Hugo 0.67.1" />
 
-  <title>Comparing Coronavirus Cases in the World • Coronavirus Cabin Fever</title>
-  <link rel='canonical' href='/post/worldcases/'>
+  <title>Covid-19 development in May • Nancy Yu</title>
+  <link rel='canonical' href='/post/coronavirusmay/'>
   
   
   <link rel='icon' href='/favicon.ico'>
@@ -31,7 +25,7 @@ Doubling time for new cases and deaths I chose 10 countries to compare the rates
   
 
 </head>
-<body class='page type-post has-sidebar'>
+<body class='page type-post has-sidebar has-emoji'>
 
   <div class='site'><div id='sidebar' class='sidebar'>
   <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
@@ -133,7 +127,7 @@ Doubling time for new cases and deaths I chose 10 countries to compare the rates
     <style>.widget-breadcrumbs li:after{content:'\2f '}</style>
   <section class='widget widget-breadcrumbs sep-after'>
     <nav id='breadcrumbs'>
-      <ol><li><a href='/'>Home</a></li><li><a href='/post/'>Posts</a></li><li><span>Comparing Coronavirus Cases in the World</span></li></ol>
+      <ol><li><a href='/'>Home</a></li><li><a href='/post/'>Posts</a></li><li><span>Covid-19 development in May</span></li></ol>
     </nav>
   </section></div>
       </div>
@@ -152,7 +146,7 @@ Doubling time for new cases and deaths I chose 10 countries to compare the rates
   <header class='header entry-header'>
   <div class='container sep-after'>
     <div class='header-info'>
-      <h1 class='title'>Comparing Coronavirus Cases in the World</h1>
+      <h1 class='title'>Covid-19 development in May</h1>
       
 
     </div>
@@ -166,10 +160,16 @@ Doubling time for new cases and deaths I chose 10 countries to compare the rates
   
 </svg>
 <span class='screen-reader-text'>Posted on </span>
-  <time class='entry-date' datetime='2020-04-09T18:00:00-01:00'>April 09, 2020</time>
+  <time class='entry-date' datetime='2020-05-14T16:20:00&#43;02:00'>May 14, 2020</time>
 </span>
 
+  <span class='byline'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
   
+  <path d="M21,21V20c0-2.76-4-5-9-5s-9,2.24-9,5v1"/>
+  <path d="M16,6.37A4,4,0,1,1,12.63,3,4,4,0,0,1,16,6.37Z"/>
+  
+</svg>
+<span class='screen-reader-text'> by </span><a href='/authors/nyyubio'>Nancy Yu</a></span>
   
 <span class='reading-time'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
   
@@ -177,7 +177,7 @@ Doubling time for new cases and deaths I chose 10 countries to compare the rates
   <polyline points="12 6 12 12 15 15"/>
   
 </svg>
-One min read
+5 mins read
 </span>
 
 
@@ -191,22 +191,16 @@ One min read
   
 
   <div class='container entry-content'>
-  
-
-
-<p><em>Last modified: 2020-04-14.</em></p>
-<p>This is my attempt to visualize some SARS-CoV-2 data with some R code (please pardon the non-optimal layout). German data is obtained from <a href="https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide">ECDC</a>. Data used from December 31, 2019-April 14, 2020 (not updated every day).</p>
-<p><br/>
-<br/></p>
-<div id="doubling-time-for-new-cases-and-deaths" class="section level5">
-<h5>Doubling time for new cases and deaths</h5>
-<p>I chose 10 countries to compare the rates of increase (in terms of doubling time) for the number of cases and the number of deaths, similar to the [NYT case growth rate visualization].</p>
-<p><em>The point of this plot is to attempt to show the shift of growth rates between the growth of new case and deaths. Note that for Italy the deaths started occurring only a few days after the start of new case reports, inidicating that they only started tracking covid-19 cases in the ICUs were filling up with covid-19 patients.</em></p>
-<p><em>Note: this chart is still a work in progress. I am working on improving the color scheme and layout.</em></p>
-<p><img src="/post/WorldCases_files/figure-html/cases_doubling-1.png" width="768" />
-<br/>
-<br/></p>
-</div>
+  <h3 id="questions-regarding-coronavirus">Questions regarding coronavirus</h3>
+<p>It has been nearly 2 months since I started this website. I have been mostly staying at home, applying for jobs, and following the coronavirus pandemic development pretty closely. As of May 14, many countries in Europe have started to ease the lockdown measures. Countries with a lot of cases, such as Spain, Italy, France, Belgium etc. have since large drops in numbers of new cases and deaths per day. Taiwan has not had a locally acquired cases for 30 days. South Korea has had single digit cases until a super-spreader event recently where a Covid-19 positive dude visited 5 nightclubs in one night. Countries such as Brazil, Russia, Mexico, etc. are unfortunately in the exponential increase phase right now (Russia is plateauing at around 10,000 new cases per day). Curiously, although the numbers of new cases and deaths are decreasing in US and UK, they do not seem to have it under control.</p>
+<p>My guess is that Germany is able to keep the daily new cases low by performing aggressive testing, tracing, and isolation of new cases. They recently found some outbreaks in nursing homes and in meatpacking plants in 3 states (just like the US!), and they immediately decided to test all workers at all meatpacking plants in Germany. It seems to be that if the reproduction number is steady (R &lt;= 1), and the small regional outbreaks are quickly controlled, then there is a chance to keep the whole thing under control. This requires the availability of plenty of tests, trained individuals to conduct the tests, labs who will process the tests in a timely manner, and tracers who will call up all people recently in contact with inidviduals who have tested positive.</p>
+<p>Why do some countries have new daily cases that won&rsquo;t come down even with shelter-in-place orders? It&rsquo;s probably because 1) not enough tests are administered each day, so people who have the virus are still out and about infecting others; 2) many people have jobs that are not possible to work from home. Even if they are sick, they need to keep working outside to put food on the table; 3) shared residences. If multiple people share a residence, then if once person gets sick with Covid-19, he/she can pass it on to other members within the residence. There can of course be other reasons that I haven&rsquo;t thought of yet.</p>
+<h3 id="the-swedish-case">The Swedish case</h3>
+<p>The world&rsquo;s media such as CNN and BBC seem to be <em>fascinated</em> with Sweden&rsquo;s decision to not do a lockdown. Some articles are of the opinion that Sweden has been too <a href="https://edition.cnn.com/2020/04/28/europe/sweden-coronavirus-lockdown-strategy-intl/index.html">wreckless</a>: look how their number of deaths are so much higher than their Scandinavian neighbors (US and UK aren&rsquo;t doing so well themselves). Others express <a href="https://www.nationalreview.com/2020/04/coronavirus-response-sweden-avoids-isolation-economic-ruin/">admiration</a> for the Swedish model compared to worse-hit countries such as Switzerland, confusing the more relaxed <em>response</em> to a smaller magnitude of outbreak for the <em>cause</em> of the size of outbreak. A more recent article <a href="https://news.yahoo.com/should-americans-look-to-sweden-or-germany-as-models-for-combating-coronavirus-174132334.html">ponders</a> if America should adopt the Swedish model or the German model, concluding that Americans will probably be unable to emulate either model, due to lower trust/obedience of authority and lower levels of organization.</p>
+<p>My take is that Sweden has a specific goal, which is to avoid overwhelming their healthcare system. They have achieved this by not treating some of the elderly who have multiple chronic condition and have contracted the virus. I cannot say if this is right or wrong, because it seems that in other countries, many of these patients did not survive even with medical treatments. Sweden admitted that it failed to better protect the elderly in nursing homes, and has since <a href="https://www.cnbc.com/2020/05/12/sweden-boosts-elderly-care-spending-as-coronavirus-death-toll-rises.html">taken measures</a> to improve the protections. Some Americans want to copy the Swedish model, with the reasons to &ldquo;save the economy&rdquo; and &ldquo;freedom&rdquo;, but the economy in Sweden has also taken a hit from the virus, and many Swedes chose to work from home and to reduce travel within the city and out of town. I&rsquo;m sure some of them are not happy that their parents or grandparents have died prematurely due to the government&rsquo;s inadequate measures.</p>
+<h3 id="infectious-disease-dilemma">Infectious disease dilemma</h3>
+<p>I understand some people feel that it should be their personal choice whether or not to take a risk with the virus and have the freedom to go to the bar/reopen their business etc. However, maybe the person who takes the risk is healthy enough to handle the sickness, but the the ones they infect are less healthy and suffer some permanent lung damage or die of Covid-19. Or maybe one doesn&rsquo;t know one has some underlying health issues and get more sick than expected. For those who want everything to open back up, perhaps should be creative and come up with various ways to re-organize bars,  restaurants, cinemas, airplanes, offices, gyms etc. to reduce viral transmission. Submissions of such suggestions to the authority may be a more productive way to speed up re-opening than armed protests.</p>
+<p>I don&rsquo;t know what to say about the anti-vaxers. Hopefully their numbers are low enough such that herd immunity could be achieved without having to force vaccinations.</p>
 
 </div>
 
@@ -217,7 +211,7 @@ One min read
   <path d="M22,19a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V5A2,2,0,0,1,4,3H9l2,3h9a2,2,0,0,1,2,2Z"/>
   
 </svg>
-<span class='screen-reader-text'>Categories: </span><a class='category' href='/categories/r-visualization/'>R visualization</a></div>
+<span class='screen-reader-text'>Categories: </span><a class='category' href='/categories/blog/'>blog</a></div>
 <div class='tags'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
   
   <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
@@ -234,7 +228,7 @@ One min read
 
 <nav class='entry-nav'>
   <div class='container'><div class='prev-entry sep-before'>
-      <a href='/post/germanycases/'>
+      <a href='/post/worldcases/'>
         <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
   
   <line x1="20" y1="12" x2="4" y2="12"/>
@@ -242,17 +236,7 @@ One min read
   
 </svg>
  Previous</span>
-        <span class='screen-reader-text'>Previous post: </span>A Snapshot of the coronavirus outbreak in Germany in April 2020</a>
-    </div><div class='next-entry sep-before'>
-      <a href='/post/coronavirusmay/'>
-        <span class='screen-reader-text'>Next post: </span>Covid-19 development in May<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-  
-  <line x1="4" y1="12" x2="20" y2="12"/>
-  <polyline points="14 6 20 12 14 18"/>
-  
-</svg>
-</span>
-      </a>
+        <span class='screen-reader-text'>Previous post: </span>Comparing Coronavirus Cases in the World</a>
     </div></div>
 </nav>
 

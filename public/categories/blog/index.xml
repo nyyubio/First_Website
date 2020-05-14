@@ -5,10 +5,19 @@
     <link>/categories/blog/</link>
     <description>Recent content in blog on Coronavirus Cabin Fever</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 23 Mar 2020 17:20:00 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 14 May 2020 16:20:00 +0200</lastBuildDate>
     
 	<atom:link href="/categories/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Covid-19 development in May</title>
+      <link>/post/coronavirusmay/</link>
+      <pubDate>Thu, 14 May 2020 16:20:00 +0200</pubDate>
+      
+      <guid>/post/coronavirusmay/</guid>
+      <description>Questions regarding coronavirus It has been nearly 2 months since I started this website. I have been mostly staying at home, applying for jobs, and following the coronavirus pandemic development pretty closely. As of May 14, many countries in Europe have started to ease the lockdown measures. Countries with a lot of cases, such as Spain, Italy, France, Belgium etc. have since large drops in numbers of new cases and deaths per day.</description>
+    </item>
     
     <item>
       <title>First post of the site</title>

@@ -164,7 +164,7 @@ _**April 18, 2020**: I really don't like that the number of new cases are creepi
 
 _**April 22, 2020**: Modified rolling 5 day average to 7 days to smooth out the curves more._
 
-```{r new_cases5days, echo = F, message = F, warning=F, fig.width=8, fig.height=5, dpi=96}
+```{r new_cases7days, echo = F, message = F, warning=F, fig.width=8, fig.height=5, dpi=96}
 #new.cases <- read_csv(here("static", "data", "GermanyNewCases10States.csv"))
 
 new7days <- states.final[states.final$Avg_7days > 0,]
