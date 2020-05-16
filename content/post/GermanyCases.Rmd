@@ -30,13 +30,13 @@ cumulative.cases <- read_csv(here("static", "data", "Germany10States.csv"))
 germany.16states <- read_csv(here("static", "data", "Germany16States.csv"))
 
 colors16 <- c('#A6CEE3', '#1F78B4', '#B2DF8A', '#33A02C',
-              '#FDBF6F', '#FF7F00', '#CAB2D6', 
-              '#6A3D9A', '#FFFF99', '#B15928', '#000000', '#466D32',
+              '#000000', '#FF7F00', '#CAB2D6', 
+              '#EFBE2F', '#FFFF99', '#B15928', '#F3A3B1', '#466D32',
               '#621AC1', '#C7D7D0', '#E31A1C','#F20CF4', '#123456')
 
 ```
 
-*Last modified: 2020-05-14.*    
+*Last modified: 2020-05-16.*    
 
 _**May 9, 2020**: Added data for all 16 states for all graphs._
 
