@@ -36,7 +36,7 @@ colors16 <- c('#A6CEE3', '#1F78B4', '#B2DF8A', '#33A02C',
 
 ```
 
-*Last modified: 2020-05-16.*    
+*Last modified: 2020-05-20.*    
 
 _**May 9, 2020**: Added data for all 16 states for all graphs._
 
@@ -70,7 +70,7 @@ cum.plot <- ggplot(data=states.final, aes(x=Days_100, y=Total_Cases, group=State
             geom_line() + geom_point(size = 0.4) +     
           #  scale_color_brewer(palette = 'Paired') + 
             scale_colour_manual(name= "State", values= colors16) +
-            scale_x_continuous('Days since the 100th case', limits=c(0,65)) + 
+            scale_x_continuous('Days since the 100th case', limits=c(0,70)) + 
             scale_y_continuous("Total cases") + 
             #ggtitle('Linear scale') +
             theme_minimal()
@@ -104,7 +104,7 @@ cum.plot2 <- ggplot(data=states.final, aes(x=Days_100, y=Total_Cases, group=Stat
              geom_line() + geom_point(size=0.4) + 
           #   scale_color_brewer(palette = 'Paired') +
              scale_colour_manual(name= "State", values= colors16) +
-             scale_x_continuous(name='Days since the 100th case', limits=c(0,65)) + 
+             scale_x_continuous(name='Days since the 100th case', limits=c(0,70)) + 
              scale_y_continuous(name="Total cases", trans = 'log10', breaks = logbreaks, minor_breaks = logminor_breaks) +
              annotation_logticks(sides="l") + 
              #ggtitle('Logarithmic scale') +
@@ -117,7 +117,7 @@ print(cum.plot2)
 <br/>
 <br/>
   
-##### Cumulative number of cases per 100,000 population
+##### Cumulative number of cases per 100,000 inhabitants
 
 This graph shows the cumulative increase of cases adjusted for the population size of each state.  Per capita, Hamburg's cases are comparable with Bavaria and Baden-Württemburg.
 
@@ -128,7 +128,7 @@ _**May 8, 2020**: added data from all 16 German states for this plot._
 #states16.filter <- germany.16states[germany.16states$Days_100 > 0,]
 #states16.sel <- unique(states16.filter$State)
 
-# Choose all the data points for the selected countries starting from Days_100 > 0
+# Choose all the data points for the selected countries starting from Days_100 > 0 
 #states16.final <- states16.filter[states16.filter$State %in% states16.sel & states16.filter$Days_100 > 0,]
 
 states16.final <- germany.16states[germany.16states$Days_100 > 0,]
@@ -138,7 +138,7 @@ per100.plot <- ggplot(data=states16.final, aes(x=Days_100, y=Per100, group=State
             geom_line() + geom_point(size = 0.4) + 
             # scale_color_brewer(palette = 'Paired') +
             scale_colour_manual(name= "State", values= colors16) +
-            scale_x_continuous('Days since 100 cases', limits=c(0,65)) + 
+            scale_x_continuous('Days since 100 cases', limits=c(0,70)) + 
             scale_y_continuous("Cumulative cases per 100,000") + 
             #ggtitle('Linear scale') +
             theme_minimal()
@@ -148,6 +148,8 @@ print(per100.plot)
 ```
 
 _**April 11, 2020**: I had not realized at all how high Saarland's numbers were when normalized for its population._
+
+_**May 19, 2020**: I am not sure what's happening with Bremen. It could be just a data entry error, or maybe it just doesn't have the virus under control at all._ 
 
 <br/>
 <br/>
@@ -203,7 +205,7 @@ deaths.plot <- ggplot(data=deaths.final, aes(x=DeathsDays_5, y=Deaths, group=Sta
    geom_line() + geom_point(size = 0.3) + 
   # scale_color_brewer(palette = 'Paired') +
    scale_colour_manual(name= "State", values= colors16) +
-   scale_x_continuous('Days since the 5th death', limits=c(0,65)) + 
+   scale_x_continuous('Days since the 5th death', limits=c(0,70)) + 
    scale_y_continuous("Total Deaths", trans = 'log10', breaks = logbreaks, 
                       minor_breaks = logminor_breaks) +
    annotation_logticks(sides="l") + 
@@ -214,6 +216,33 @@ print(deaths.plot)
 
 ```
 
+<br/>
+<br/>
+<br/>
+
+##### Cumulated number of deaths per 100,000 inhabitants
+
+*Added May 20, 2020*
+
+This graph shows the cumulative increase of deaths adjusted for the population size of each state.
+
+```{r cum_deaths_per100, echo = F, message = F, warning=F, fig.width=8, fig.height=5, dpi=96}
+
+states16.final <- germany.16states[germany.16states$DeathsDays_5 > 0,]
+
+# Plot 1 == Linear scale for total number of cases
+deathper100.plot <- ggplot(data=states16.final, aes(x=DeathsDays_5, y=DeathPer100, group=State, color=State)) +
+            geom_line() + geom_point(size = 0.4) + 
+            # scale_color_brewer(palette = 'Paired') +
+            scale_colour_manual(name= "State", values= colors16) +
+            scale_x_continuous('Days since 100 cases', limits=c(0,70)) + 
+            scale_y_continuous("Cumulative cases per 100,000") + 
+            #ggtitle('Linear scale') +
+            theme_minimal()
+
+print(deathper100.plot)
+
+```
 <br/>
 <br/>
 <br/>
@@ -240,15 +269,19 @@ death7days.plot <- ggplot(data=death7days, aes(x=Dates, y=Death_7days, group=Sta
             scale_colour_manual(name= "State", values= colors16) +
             scale_x_date(name='Date', labels=date_format('%Y-%m-%d')) + 
             scale_y_continuous(name="Number of new deaths (averaged over 7 days)") + 
+           
             #ggtitle('Linear scale') +
             theme_minimal() + theme(axis.text.x = element_text(angle=20, hjust=0.5, vjust=0.5))
 
 print(death7days.plot)
  
 ```
+<br/>
+<br/>
+<br/>
 
 
-<br/>
-<br/>
-<br/>
+
+
+
 
