@@ -205,8 +205,8 @@ deaths.plot <- ggplot(data=deaths.final, aes(x=DeathsDays_5, y=Deaths, group=Sta
    geom_line() + geom_point(size = 0.3) + 
   # scale_color_brewer(palette = 'Paired') +
    scale_colour_manual(name= "State", values= colors16) +
-   scale_x_continuous('Days since the 5th death', limits=c(0,70)) + 
-   scale_y_continuous("Total Deaths", trans = 'log10', breaks = logbreaks, 
+   scale_x_continuous('Days since 5 deaths', limits=c(0,70)) + 
+   scale_y_continuous("Total deaths", trans = 'log10', breaks = logbreaks, 
                       minor_breaks = logminor_breaks) +
    annotation_logticks(sides="l") + 
    #ggtitle('Linear scale') +
@@ -235,8 +235,8 @@ deathper100.plot <- ggplot(data=states16.final, aes(x=DeathsDays_5, y=DeathPer10
             geom_line() + geom_point(size = 0.4) + 
             # scale_color_brewer(palette = 'Paired') +
             scale_colour_manual(name= "State", values= colors16) +
-            scale_x_continuous('Days since 100 cases', limits=c(0,70)) + 
-            scale_y_continuous("Cumulative cases per 100,000") + 
+            scale_x_continuous('Days since 5 deaths', limits=c(0,70)) + 
+            scale_y_continuous("Cumulative deaths per 100,000") + 
             #ggtitle('Linear scale') +
             theme_minimal()
 
