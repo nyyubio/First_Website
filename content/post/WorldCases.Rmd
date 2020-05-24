@@ -42,7 +42,6 @@ I chose 10 countries to compare the rates of increase (in terms of doubling time
 
 *The point of this plot is to attempt to show the shift of growth rates between the growth of new case and deaths. Note that for Italy the deaths started occurring only a few days after the start of new case reports, inidicating that they only started tracking covid-19 cases in the ICUs were filling up with covid-19 patients.*
 
-*Note: this chart is still a work in progress. I am working on improving the color scheme and layout.*
 
 [NYT visualization]: https://www.nytimes.com/interactive/2020/world/coronavirus-maps.html
 
