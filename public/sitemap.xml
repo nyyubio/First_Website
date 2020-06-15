@@ -4,7 +4,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2020-05-14T16:20:00+02:00</lastmod>
+    <lastmod>2020-06-15T09:00:00-01:00</lastmod>
   </url>
   
   <url>
@@ -22,6 +22,36 @@
   </url>
   
   <url>
+    <loc>/categories/</loc>
+    <lastmod>2020-06-15T09:00:00-01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/covid19/</loc>
+    <lastmod>2020-06-15T09:00:00-01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-06-15T09:00:00-01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/r-visualization/</loc>
+    <lastmod>2020-06-15T09:00:00-01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-06-15T09:00:00-01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/germanycases/</loc>
+    <lastmod>2020-06-15T09:00:00-01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/authors/</loc>
     <lastmod>2020-05-14T16:20:00+02:00</lastmod>
   </url>
@@ -32,17 +62,7 @@
   </url>
   
   <url>
-    <loc>/categories/</loc>
-    <lastmod>2020-05-14T16:20:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/post/coronavirusmay/</loc>
-    <lastmod>2020-05-14T16:20:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/covid19/</loc>
     <lastmod>2020-05-14T16:20:00+02:00</lastmod>
   </url>
   
@@ -52,33 +72,13 @@
   </url>
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2020-05-14T16:20:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2020-05-14T16:20:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/post/worldcases/</loc>
-    <lastmod>2020-04-09T18:00:00-01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/r-visualization/</loc>
     <lastmod>2020-04-09T18:00:00-01:00</lastmod>
   </url>
   
   <url>
     <loc>/page/</loc>
     <lastmod>2020-04-02T17:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/germanycases/</loc>
-    <lastmod>2020-04-01T18:00:00-01:00</lastmod>
   </url>
   
   <url>
