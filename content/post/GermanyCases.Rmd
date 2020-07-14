@@ -1,7 +1,7 @@
 ---
 title: "Tracking the coronavirus outbreak in Germany from March to June 2020"
 author: "Nancy Yu"
-date: "2020-07-13T09:00:00-01:00"
+date: "2020-07-14T09:00:00-01:00"
 categories: ["R visualization"]
 tags: ["covid19"]
 
@@ -36,7 +36,7 @@ colors16 <- c('#A6CEE3', '#1F78B4', '#B2DF8A', '#33A02C',
 
 ```
 
-*Last modified: 2020-07-13.*  
+*Last modified: 2020-07-14.*  
 
 _**May 9, 2020**: Added data for all 16 states for all graphs._
 
