@@ -1,7 +1,7 @@
 ---
 title: "Tracking the coronavirus outbreak in Germany from March 2020"
 author: "Nancy Yu"
-date: "2020-09-22T09:30:00+02:00"
+date: "2020-09-30T09:30:00+02:00"
 categories: ["R visualization"]
 tags: ["covid19"]
 
@@ -35,7 +35,7 @@ colors16 <- c('#A6CEE3', '#1F78B4', '#B2DF8A', '#33A02C',
 
 ```
 
-*Last modified: 2020-09-22.*
+*Last modified: 2020-09-30.*
 
 
 This is my attempt to visualize some SARS-CoV-2 data with some R code (please pardon the non-optimal layout). German data is obtained from the [Robert Koch Institute]. Data used from March 15, 2020 (not updated every day).
@@ -64,10 +64,10 @@ states.final <- germany.16states[germany.16states$Days_100 > 0,]
 
 # Plot 1 == Linear scale for total number of cases
 cum.plot <- ggplot(data=states.final, aes(x=Days_100, y=Total_Cases, group=State, color=State)) +
-            geom_line() + geom_point(size = 0.3) +     
+            geom_line() + geom_point(size = 0.2) +     
           #  scale_color_brewer(palette = 'Paired') + 
             scale_colour_manual(name= "State", values= colors16) +
-            scale_x_continuous('Days since the 100th case', limits=c(0,200)) + 
+            scale_x_continuous('Days since the 100th case', limits=c(0,220)) + 
             scale_y_continuous("Total cases") + 
             #ggtitle('Linear scale') +
             theme_minimal()
@@ -98,10 +98,10 @@ logbreaks <- 10^(-10:10)
 logminor_breaks <- rep(1:9, 21)*(10^rep(-10:10, each=9))
 
 cum.plot2 <- ggplot(data=states.final, aes(x=Days_100, y=Total_Cases, group=State, color=State)) +
-             geom_line() + geom_point(size=0.3) + 
+             geom_line() + geom_point(size=0.2) + 
           #   scale_color_brewer(palette = 'Paired') +
              scale_colour_manual(name= "State", values= colors16) +
-             scale_x_continuous(name='Days since the 100th case', limits=c(0,200)) + 
+             scale_x_continuous(name='Days since the 100th case', limits=c(0,220)) + 
              scale_y_continuous(name="Total cases", trans = 'log10', breaks = logbreaks, minor_breaks = logminor_breaks) +
              annotation_logticks(sides="l") + 
              #ggtitle('Logarithmic scale') +
@@ -132,10 +132,10 @@ states16.final <- germany.16states[germany.16states$Days_100 > 0,]
 
 # Plot 1 == Linear scale for total number of cases
 per100.plot <- ggplot(data=states16.final, aes(x=Days_100, y=Per100, group=State, color=State)) +
-            geom_line() + geom_point(size = 0.3) + 
+            geom_line() + geom_point(size = 0.2) + 
             # scale_color_brewer(palette = 'Paired') +
             scale_colour_manual(name= "State", values= colors16) +
-            scale_x_continuous('Days since 100 cases', limits=c(0,200)) + 
+            scale_x_continuous('Days since 100 cases', limits=c(0,220)) + 
             scale_y_continuous("Cumulative cases per 100,000") + 
             #ggtitle('Linear scale') +
             theme_minimal()
@@ -170,7 +170,7 @@ new7days <- states.final[states.final$Avg_7days > 0,]
 new7days$Dates <- as.Date(new7days$Dates)
 
 newcase7.plot <- ggplot(data=new7days, aes(x=Dates, y=Avg_7days, group=State, color=State)) +
-            geom_line() + geom_point(size = 0.3) + 
+            geom_line() + geom_point(size = 0.2) + 
        #     scale_color_brewer(palette = 'Paired') +
             scale_colour_manual(name= "State", values= colors16) +
             scale_x_date(name='Date', labels=date_format('%Y-%m-%d')) + 
@@ -199,10 +199,10 @@ deaths.final <- states.final[states.final$DeathsDays_5 > 0,]
 
 # Plot 1 == Linear scale for total number of cases
 deaths.plot <- ggplot(data=deaths.final, aes(x=DeathsDays_5, y=Deaths, group=State, color=State)) +
-   geom_line() + geom_point(size = 0.3) + 
+   geom_line() + geom_point(size = 0.2) + 
   # scale_color_brewer(palette = 'Paired') +
    scale_colour_manual(name= "State", values= colors16) +
-   scale_x_continuous('Days since 5 deaths', limits=c(0,200)) + 
+   scale_x_continuous('Days since 5 deaths', limits=c(0,220)) + 
    scale_y_continuous("Total deaths", trans = 'log10', breaks = logbreaks, 
                       minor_breaks = logminor_breaks) +
    annotation_logticks(sides="l") + 
@@ -229,10 +229,10 @@ states16.final <- germany.16states[germany.16states$DeathsDays_5 > 0,]
 
 # Plot 1 == Linear scale for total number of cases
 deathper100.plot <- ggplot(data=states16.final, aes(x=DeathsDays_5, y=DeathPer100, group=State, color=State)) +
-            geom_line() + geom_point(size = 0.3) + 
+            geom_line() + geom_point(size = 0.2) + 
             # scale_color_brewer(palette = 'Paired') +
             scale_colour_manual(name= "State", values= colors16) +
-            scale_x_continuous('Days since 5 deaths', limits=c(0,200)) + 
+            scale_x_continuous('Days since 5 deaths', limits=c(0,220)) + 
             scale_y_continuous("Cumulative deaths per 100,000") + 
             #ggtitle('Linear scale') +
             theme_minimal()
@@ -261,7 +261,7 @@ death7days <- states.final
 death7days <- death7days[death7days$Dates > as.Date('2020-03-20'),]
 
 death7days.plot <- ggplot(data=death7days, aes(x=Dates, y=Death_7days, group=State, color=State)) +
-            geom_line() + geom_point(size = 0.3) + 
+            geom_line() + geom_point(size = 0.2) + 
        #     scale_color_brewer(palette = 'Paired') +
             scale_colour_manual(name= "State", values= colors16) +
             scale_x_date(name='Date', labels=date_format('%Y-%m-%d')) + 
