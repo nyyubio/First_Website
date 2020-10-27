@@ -1,7 +1,7 @@
 ---
 title: "Cases in all of Germany"
 author: "Nancy Yu"
-date: "2020-10-23T11:30:00+02:00"
+date: "2020-10-27T11:00:00+02:00"
 categories: ["R visualization"]
 tags: ["covid19"]
 
@@ -38,7 +38,7 @@ colors16 <- c('#A6CEE3', '#1F78B4', '#B2DF8A', '#33A02C',
 
 ```
 
-*Last modified: 2020-10-23.*  
+*Last modified: 2020-10-27.*  
 
 ##### Cumulative number of confirmed SARS-CoV-2 cases in Germany in linear scale since March 15, 2020
 
@@ -51,7 +51,7 @@ cum.plot <- ggplot(data=all.cases, aes(x=date, y=total_cases)) +
           #  scale_colour_manual(name= "State", values= colors16) +
           #  scale_x_continuous('Days since the 100th case', limits=c(0,200)) + 
             scale_x_date(name='Date', labels=date_format('%Y-%m-%d')) + 
-            scale_y_continuous("Total cases") + 
+            scale_y_continuous(name="Total cases", labels= comma) + 
             #ggtitle('Linear scale') +
             theme_minimal() + theme(axis.text.x = element_text(angle=20, hjust=0.5, vjust=0.5))
 
