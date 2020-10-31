@@ -1,7 +1,7 @@
 ---
 title: "Tracking the coronavirus outbreak in Germany from March 2020"
 author: "Nancy Yu"
-date: "2020-10-27T09:00:00+02:00"
+date: "2020-10-31T10:00:00+02:00"
 categories: ["R visualization"]
 tags: ["covid19"]
 
@@ -35,7 +35,7 @@ colors16 <- c('#A6CEE3', '#1F78B4', '#B2DF8A', '#33A02C',
 
 ```
 
-*Last modified: 2020-10-27.*
+*Last modified: 2020-10-31.* 
 
 
 This is my attempt to visualize some SARS-CoV-2 data with some R code (please pardon the non-optimal layout). German data is obtained from the [Robert Koch Institute]. Data used from March 15, 2020 (not updated every day).
@@ -68,7 +68,7 @@ cum.plot <- ggplot(data=states.final, aes(x=Days_100, y=Total_Cases, group=State
           #  scale_color_brewer(palette = 'Paired') + 
             scale_colour_manual(name= "State", values= colors16) +
             scale_x_continuous('Days since the 100th case', limits=c(0,250)) + 
-            scale_y_continuous("Total cases") + 
+            scale_y_continuous(name="Total cases", labels= comma) + 
             #ggtitle('Linear scale') +
             theme_minimal()
 
@@ -102,7 +102,7 @@ cum.plot2 <- ggplot(data=states.final, aes(x=Days_100, y=Total_Cases, group=Stat
           #   scale_color_brewer(palette = 'Paired') +
              scale_colour_manual(name= "State", values= colors16) +
              scale_x_continuous(name='Days since the 100th case', limits=c(0,250)) + 
-             scale_y_continuous(name="Total cases", trans = 'log10', breaks = logbreaks, minor_breaks = logminor_breaks) +
+             scale_y_continuous(name="Total cases", trans = 'log10', breaks = logbreaks, minor_breaks =                                 logminor_breaks, labels= comma) +
              annotation_logticks(sides="l") + 
              #ggtitle('Logarithmic scale') +
              theme_minimal()
