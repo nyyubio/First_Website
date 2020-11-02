@@ -1,7 +1,7 @@
 ---
 title: "Cases in all of Germany"
 author: "Nancy Yu"
-date: "2020-10-30T10:00:00+02:00"
+date: "2020-11-02T14:00:00+02:00"
 categories: ["R visualization"]
 tags: ["covid19"]
 
@@ -38,7 +38,7 @@ colors16 <- c('#A6CEE3', '#1F78B4', '#B2DF8A', '#33A02C',
 
 ```
 
-*Last modified: 2020-10-30.*  
+*Last modified: 2020-11-02.*  
 
 ##### Cumulative number of confirmed SARS-CoV-2 cases in Germany in linear scale since March 15, 2020
 
