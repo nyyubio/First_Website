@@ -5,7 +5,7 @@
     <link>/</link>
     <description>Recent content in Home on Coronavirus Cabin Fever</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 03 Nov 2020 09:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2020 11:30:00 +0100</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
@@ -41,27 +41,27 @@ Our World in Data: Clean data visualization and statistics about the coronavirus
     </item>
     
     <item>
+      <title>Cases in all of Germany</title>
+      <link>/post/germanyallcases/</link>
+      <pubDate>Sat, 07 Nov 2020 11:30:00 +0100</pubDate>
+      
+      <guid>/post/germanyallcases/</guid>
+      <description>Last modified: 2020-11-07.
+Cumulative number of confirmed SARS-CoV-2 cases in Germany in linear scale since March 15, 2020  
+ Number of confirmed new cases in Germany since March 15, 2020 This plot shows the increase in the number of confirmed new cases. Each data point is averaged over 7 previous consecutive days . Note: This is not necessarily reflective in the increase of actual number of cases each day, since the number of tests for the virus has been increasing as the pandemic progressed.</description>
+    </item>
+    
+    <item>
       <title>Tracking the coronavirus outbreak in Germany from March 2020</title>
       <link>/post/germanycases/</link>
-      <pubDate>Tue, 03 Nov 2020 09:00:00 +0200</pubDate>
+      <pubDate>Sat, 07 Nov 2020 11:30:00 +0100</pubDate>
       
       <guid>/post/germanycases/</guid>
-      <description>Last modified: 2020-11-03.
+      <description>Last modified: 2020-11-07.
 This is my attempt to visualize some SARS-CoV-2 data with some R code (please pardon the non-optimal layout). German data is obtained from the Robert Koch Institute. Data used from March 15, 2020 (not updated every day).
 For more extensive information about SARS-CoV-2 in Germany in English, see here.
  
 Cumulative number of confirmed SARS-CoV-2 cases in Germany in linear scale since 100th case</description>
-    </item>
-    
-    <item>
-      <title>Cases in all of Germany</title>
-      <link>/post/germanyallcases/</link>
-      <pubDate>Mon, 02 Nov 2020 14:00:00 +0200</pubDate>
-      
-      <guid>/post/germanyallcases/</guid>
-      <description>Last modified: 2020-11-02.
-Cumulative number of confirmed SARS-CoV-2 cases in Germany in linear scale since March 15, 2020  
- Number of confirmed new cases in Germany since March 15, 2020 This plot shows the increase in the number of confirmed new cases. Each data point is averaged over 7 previous consecutive days . Note: This is not necessarily reflective in the increase of actual number of cases each day, since the number of tests for the virus has been increasing as the pandemic progressed.</description>
     </item>
     
     <item>
