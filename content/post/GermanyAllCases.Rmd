@@ -1,7 +1,7 @@
 ---
 title: "Cases in all of Germany"
 author: "Nancy Yu"
-date: "2020-11-27T12:00:00+01:00"
+date: "2020-12-03T10:00:00+01:00"
 categories: ["R visualization"]
 tags: ["covid19"]
 
@@ -38,11 +38,16 @@ colors16 <- c('#A6CEE3', '#1F78B4', '#B2DF8A', '#33A02C',
 
 ```
 
-*Last modified: 2020-11-27.*  
+*Last modified: 2020-12-03.*  
 
 *Data source: [Our World In Data]*
 
 [Our World In Data]: https://ourworldindata.org/coronavirus
+
+_**December 2, 2020**_: Our World In Data originally obtained their data from ECDC. They have since switched data source to John Hopkins, and the daily numbers looked different from ECDC/RKI, due to different ways of updating their data. Therefore I have switched data source to [RKI] which seems to be the primary source for ECDC. 
+
+
+[RKI]: https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Fallzahlen.html
 
 
 ##### Cumulative number of confirmed SARS-CoV-2 cases in Germany in linear scale since March 15, 2020
@@ -71,8 +76,6 @@ print(cum.plot)
 This plot shows the increase in the number of confirmed new cases. Each data point is averaged over 7 previous consecutive days . Note: This is not necessarily reflective in the increase of *actual* number of cases each day, since the number of tests for the virus has been increasing as the pandemic progressed.
 
 ```{r new_cases7days_all, echo = F, message = F, warning=F, fig.width=8, fig.height=5, dpi=96}
-
-
 
 newcase7.plot <- ggplot(data=all.cases, aes(x=date, y=new_cases_smoothed)) +
             geom_line(color=color_deu) + geom_point(size = 0.3) + 
