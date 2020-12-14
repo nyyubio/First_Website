@@ -5,7 +5,7 @@
     <link>/tags/covid19/</link>
     <description>Recent content in covid19 on Coronavirus Cabin Fever</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 13 Dec 2020 12:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 14 Dec 2020 10:30:00 +0100</lastBuildDate>
     
 	<atom:link href="/tags/covid19/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,10 +13,10 @@
     <item>
       <title>Cases in all of Germany</title>
       <link>/post/germanyallcases/</link>
-      <pubDate>Sun, 13 Dec 2020 12:00:00 +0100</pubDate>
+      <pubDate>Mon, 14 Dec 2020 10:30:00 +0100</pubDate>
       
       <guid>/post/germanyallcases/</guid>
-      <description>Last modified: 2020-12-13.
+      <description>Last modified: 2020-12-14.
 Data source: Our World In Data
 December 2, 2020: Our World In Data originally obtained their data from ECDC. They have since switched data source to John Hopkins, and the daily numbers looked different from ECDC/RKI, due to different ways of updating their data. Therefore I have switched data source to RKI which seems to be the primary source for ECDC.
 Cumulative number of confirmed SARS-CoV-2 cases in Germany in linear scale since March 15, 2020</description>
@@ -25,10 +25,10 @@ Cumulative number of confirmed SARS-CoV-2 cases in Germany in linear scale since
     <item>
       <title>Tracking the coronavirus outbreak in Germany from March 2020</title>
       <link>/post/germanycases/</link>
-      <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/germanycases/</guid>
-      <description>Last modified: 2020-12-13.
+      <description>Last modified: 2020-12-14.
 This is my attempt to visualize some SARS-CoV-2 data with some R code (please pardon the non-optimal layout). German data is obtained from the Robert Koch Institute. Data used from March 15, 2020 (not updated every day).
 For more extensive information about SARS-CoV-2 in Germany in English, see here.
  
