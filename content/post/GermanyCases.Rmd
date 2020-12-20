@@ -1,7 +1,7 @@
 ---
 title: Tracking the coronavirus outbreak in Germany from March 2020
 author: Nancy Yu
-date: '2020-12-18'
+date: '2020-12-20'
 categories:
   - R visualization
 tags:
@@ -36,7 +36,7 @@ colors16 <- c('#A6CEE3', '#1F78B4', '#B2DF8A', '#33A02C',
 
 ```
 
-*Last modified: 2020-12-18.* 
+*Last modified: 2020-12-20.* 
 
 
 This is my attempt to visualize some SARS-CoV-2 data with some R code (please pardon the non-optimal layout). German data is obtained from the [Robert Koch Institute]. Data used from March 15, 2020 (not updated every day).
@@ -188,27 +188,29 @@ print(newcase7.plot)
 <br/>
 <br/>
 
-##### Cumulative number of deaths in log scale
+##### Cumulative number of deaths in log scale since March 25, 2020
 
-Data shown since the 5th death.
+_**December 20, 2020**: Changed x-axis from "Days since the 5th death" to since March 25, 2020_
 
 ```{r cum_deaths, echo = F, message = F, warning=F, fig.width=8, fig.height=5, dpi=96}
 #num.deaths <- read_csv(here("static", "data", "GermanyTotalDeaths10States.csv"))
 
 # Choose all the data points for the selected countries starting from Days_5 > 0
-deaths.final <- states.final[states.final$DeathsDays_5 > 0,]
+states.final$Dates <- as.Date(states.final$Dates)
+deaths.final <- states.final
+deaths.final <- deaths.final[deaths.final$Dates > as.Date('2020-03-24'),]
 
 # Plot 1 == Linear scale for total number of cases
-deaths.plot <- ggplot(data=deaths.final, aes(x=DeathsDays_5, y=Deaths, group=State, color=State)) +
+deaths.plot <- ggplot(data=deaths.final, aes(x=Dates, y=Deaths, group=State, color=State)) +
    geom_line() + geom_point(size = 0.1) + 
   # scale_color_brewer(palette = 'Paired') +
    scale_colour_manual(name= "State", values= colors16) +
-   scale_x_continuous('Days since 5 deaths', limits=c(0,300)) + 
+   scale_x_date(name='Date', labels=date_format('%Y-%m-%d')) + 
    scale_y_continuous("Total deaths", trans = 'log10', breaks = logbreaks, 
                       minor_breaks = logminor_breaks) +
    annotation_logticks(sides="l") + 
    #ggtitle('Linear scale') +
-   theme_minimal()
+   theme_minimal() + theme(axis.text.x = element_text(angle=20, hjust=0.5, vjust=0.5))
 
 print(deaths.plot)
 
@@ -224,19 +226,28 @@ print(deaths.plot)
 
 This graph shows the cumulative increase of deaths adjusted for the population size of each state.
 
+_**December 20, 2020**: Changed x-axis from "Days since the 5th death" to since March 25, 2020_
+
+
 ```{r cum_deaths_per100, echo = F, message = F, warning=F, fig.width=8, fig.height=5, dpi=96}
 
-states16.final <- germany.16states[germany.16states$DeathsDays_5 > 0,]
+states.final$Dates <- as.Date(states.final$Dates)
+deaths.final100 <- states.final
+deaths.final100 <- deaths.final100[deaths.final100$Dates > as.Date('2020-03-24'),]
+
+#states16.final <- germany.16states[germany.16states$DeathsDays_5 > 0,]
 
 # Plot 1 == Linear scale for total number of cases
-deathper100.plot <- ggplot(data=states16.final, aes(x=DeathsDays_5, y=DeathPer100, group=State, color=State)) +
+deathper100.plot <- ggplot(data=deaths.final100, aes(x=Dates, y=DeathPer100, group=State, color=State)) +
             geom_line() + geom_point(size = 0.1) + 
             # scale_color_brewer(palette = 'Paired') +
             scale_colour_manual(name= "State", values= colors16) +
-            scale_x_continuous('Days since 5 deaths', limits=c(0,300)) + 
+          #  scale_x_continuous('Days since 5 deaths', limits=c(0,300)) +
+            scale_x_date(name='Date', labels=date_format('%Y-%m-%d')) + 
             scale_y_continuous("Cumulative deaths per 100,000") + 
             #ggtitle('Linear scale') +
-            theme_minimal()
+            theme_minimal() + theme(axis.text.x = element_text(angle=20, hjust=0.5, vjust=0.5))
+
 
 print(deathper100.plot)
 
