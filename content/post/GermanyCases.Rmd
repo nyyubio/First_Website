@@ -1,7 +1,7 @@
 ---
 title: Tracking the coronavirus outbreak in Germany from March 2020
 author: Nancy Yu
-date: '2020-12-27'
+date: '2020-12-29'
 categories:
   - R visualization
 tags:
@@ -36,7 +36,7 @@ colors16 <- c('#A6CEE3', '#1F78B4', '#B2DF8A', '#33A02C',
 
 ```
 
-*Last modified: 2020-12-27.* 
+*Last modified: 2020-12-29.* 
 
 
 This is my attempt to visualize some SARS-CoV-2 data with some R code (please pardon the non-optimal layout). German data is obtained from the [Robert Koch Institute]. Data used from March 15, 2020 (not updated every day).
@@ -163,6 +163,9 @@ _**April 9, 2020**: The graph doesn't show it (5 day average, later changed to 7
 _**April 18, 2020**: I really don't like that the number of new cases are creeping back up this week for most of the states._
 
 _**April 22, 2020**: Modified rolling 5 day average to 7 days to smooth out the curves more._
+
+_**December 29, 2020**: Note that during the Christmas holidays the numbers are artificially low as there are fewer tests conducted; fewer people go get tested, and also the reporting of numbers are delayed._
+
 
 ```{r new_cases7days, echo = F, message = F, warning=F, fig.width=8, fig.height=5, dpi=96}
 #new.cases <- read_csv(here("static", "data", "GermanyNewCases10States.csv"))

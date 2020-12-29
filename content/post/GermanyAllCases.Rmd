@@ -1,7 +1,7 @@
 ---
 title: "Cases in all of Germany"
 author: "Nancy Yu"
-date: "2020-12-27T15:00:00+01:00"
+date: "2020-12-29T12:00:00+01:00"
 categories: ["R visualization"]
 tags: ["covid19"]
 
@@ -38,7 +38,7 @@ colors16 <- c('#A6CEE3', '#1F78B4', '#B2DF8A', '#33A02C',
 
 ```
 
-*Last modified: 2020-12-27.*  
+*Last modified: 2020-12-29.*  
 
 *Data source: [Our World In Data]*
 
@@ -74,6 +74,9 @@ print(cum.plot)
 ##### Number of confirmed new cases in Germany since March 15, 2020
 
 This plot shows the increase in the number of confirmed new cases. Each data point is averaged over 7 previous consecutive days . Note: This is not necessarily reflective in the increase of *actual* number of cases each day, since the number of tests for the virus has been increasing as the pandemic progressed.
+
+_**December 28, 2020**: Note that during the Christmas holidays the numbers are artificially low as there are fewer tests conducted, fewer people go get tested, and also the reporting of numbers are delayed._
+
 
 ```{r new_cases7days_all, echo = F, message = F, warning=F, fig.width=8, fig.height=5, dpi=96}
 
