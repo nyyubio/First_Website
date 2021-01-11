@@ -1,7 +1,7 @@
 ---
 title: "Cases in all of Germany"
 author: "Nancy Yu"
-date: "2021-01-07T13:00:00+01:00"
+date: "2021-01-11T10:00:00+01:00"
 categories: ["R visualization"]
 tags: ["covid19"]
 
@@ -38,7 +38,7 @@ colors16 <- c('#A6CEE3', '#1F78B4', '#B2DF8A', '#33A02C',
 
 ```
 
-*Last modified: 2021-01-07.*  
+*Last modified: 2021-01-11.*  
 
 *Data source: [Our World In Data]*
 
