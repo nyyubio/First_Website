@@ -1,7 +1,7 @@
 ---
 title: "Cases in all of Germany"
 author: "Nancy Yu"
-date: "2021-03-04T10:00:00+01:00"
+date: "2021-03-06T11:00:00+01:00"
 categories: ["R visualization"]
 tags: ["covid19"]
 
@@ -38,7 +38,7 @@ colors16 <- c('#A6CEE3', '#1F78B4', '#B2DF8A', '#33A02C',
 
 ```
 
-*Last modified: 2021-03-04.*  
+*Last modified: 2021-03-06.*  
 
 *Data source: [Our World In Data]*
 
@@ -56,7 +56,7 @@ _**December 2, 2020**_: Our World In Data originally obtained their data from EC
 
 # Plot 1 == Linear scale for total number of cases
 cum.plot <- ggplot(data=all.cases, aes(x=date, y=total_cases)) +
-            geom_line(color=color_deu) + geom_point(size = 0.3) +     
+            geom_line(color=color_deu) + geom_point(size = 0.2) +     
           #  scale_color_brewer(palette = 'Paired') + 
           #  scale_colour_manual(name= "State", values= colors16) +
           #  scale_x_continuous('Days since the 100th case', limits=c(0,200)) + 
@@ -81,7 +81,7 @@ _**December 28, 2020**: Note that during the Christmas holidays the numbers are 
 ```{r new_cases7days_all, echo = F, message = F, warning=F, fig.width=8, fig.height=5, dpi=96}
 
 newcase7.plot <- ggplot(data=all.cases, aes(x=date, y=new_cases_smoothed)) +
-            geom_line(color=color_deu) + geom_point(size = 0.3) + 
+            geom_line(color=color_deu) + geom_point(size = 0.2) + 
        #     scale_color_brewer(palette = 'Paired') +
       #      scale_colour_manual(name= "State", values= colors16) +
             scale_x_date(name='Date', labels=date_format('%Y-%m-%d')) + 
@@ -108,7 +108,7 @@ print(newcase7.plot)
 
 # Plot 1 == Linear scale for total number of cases
 deaths.plot <- ggplot(data= all.cases, aes(x=dates, y=total_deaths)) +
-   geom_line(color=color_deu) + geom_point(size = 0.3) + 
+   geom_line(color=color_deu) + geom_point(size = 0.2) + 
   # scale_color_brewer(palette = 'Paired') +
 #   scale_colour_manual(name= "State", values= colors16) +
 #   scale_x_continuous('Days since 5 deaths', limits=c(0,200)) + 
@@ -142,7 +142,7 @@ This plot shows the increase in the number of confirmed deaths. Each data point 
 #death7days <- death7days[death7days$Dates > as.Date('2020-03-20'),]
 
 death7days.plot <- ggplot(data= all.cases, aes(x=date, y=new_deaths_smoothed)) +
-            geom_line(color=color_deu) + geom_point(size = 0.3) + 
+            geom_line(color=color_deu) + geom_point(size = 0.2) + 
        #     scale_color_brewer(palette = 'Paired') +
             scale_colour_manual(values= color_deu) +
             scale_x_date(name='Date', labels=date_format('%Y-%m-%d')) + 
