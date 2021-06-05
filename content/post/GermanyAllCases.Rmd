@@ -1,7 +1,7 @@
 ---
 title: "Cases in all of Germany"
 author: "Nancy Yu"
-date: "2021-05-31T12:00:00+01:00"
+date: "2021-06-05T15:00:00+01:00"
 categories: ["R visualization"]
 tags: ["covid19"] 
 
@@ -38,7 +38,7 @@ colors16 <- c('#A6CEE3', '#1F78B4', '#B2DF8A', '#33A02C',
 
 ```
 
-*Last modified: 2021-05-31.*  
+*Last modified: 2021-06-05.*  
 
 *Data source: [Our World In Data]*
 
@@ -112,7 +112,7 @@ deaths.plot <- ggplot(data= all.cases, aes(x=dates, y=total_deaths)) +
   # scale_color_brewer(palette = 'Paired') +
 #   scale_colour_manual(name= "State", values= colors16) +
 #   scale_x_continuous('Days since 5 deaths', limits=c(0,200)) + 
-   scale_x_date(name='Date', labels=date_format('%Y-%m-%d')) + 
+    scale_x_date(name='Date', labels=date_format('%Y-%m-%d')) + 
     scale_y_continuous(name="Total deaths") + 
 #   scale_y_continuous("Total deaths", trans = 'log10', breaks = logbreaks, 
 #                      minor_breaks = logminor_breaks) +
@@ -146,7 +146,7 @@ death7days.plot <- ggplot(data= all.cases, aes(x=date, y=new_deaths_smoothed)) +
        #     scale_color_brewer(palette = 'Paired') +
             scale_colour_manual(values= color_deu) +
             scale_x_date(name='Date', labels=date_format('%Y-%m-%d')) + 
-            scale_y_continuous(name="Number of new deaths (averaged over 7 days)") + 
+            scale_y_continuous(name="Number of new deaths (averaged over 7 days)", limits=c(0,900)) + 
            
             #ggtitle('Linear scale') +
             theme_minimal() + theme(axis.text.x = element_text(angle=20, hjust=0.5, vjust=0.5))
