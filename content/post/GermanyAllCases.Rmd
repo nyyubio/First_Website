@@ -1,7 +1,7 @@
 ---
 title: "Cases in all of Germany"
 author: "Nancy Yu"
-date: "2021-08-05T08:00:00+01:00"
+date: "2021-08-12T10:00:00+01:00"
 categories: ["R visualization"]
 tags: ["covid19"] 
 
@@ -10,6 +10,7 @@ tags: ["covid19"]
 
 ```{r setup, include=F, message=F}
 
+# setwd('/Users/nancyyu/Documents/R website/First_Website/')
 knitr::opts_chunk$set(echo=TRUE, collapse = TRUE)
 
 libload<-function(...) {
@@ -39,7 +40,7 @@ colors16 <- c('#A6CEE3', '#1F78B4', '#B2DF8A', '#33A02C',
 ```
 
 
-*Last modified: 2021-08-05.*  
+*Last modified: 2021-08-12.*  
 
 
 *Data source: [Our World In Data]*
