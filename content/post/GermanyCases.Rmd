@@ -1,7 +1,7 @@
 ---
 title: Tracking the coronavirus outbreak in Germany from March 2020
 author: Nancy Yu
-date: '2021-08-18T09:00:00+01:00'
+date: '2021-08-19T06:30:00+01:00'
 categories:
   - R visualization
 tags:
@@ -37,7 +37,7 @@ colors16 <- c('#A6CEE3', '#1F78B4', '#B2DF8A', '#33A02C',
 ```
 
 
-*Last modified: 2021-08-18.* 
+*Last modified: 2021-08-19.* 
 
 
 This is my attempt to visualize some SARS-CoV-2 data with some R code (please pardon the non-optimal layout). German data is obtained from the [Robert Koch Institute]. Data used from March 15, 2020 (not updated every day).
