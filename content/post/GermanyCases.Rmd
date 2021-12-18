@@ -1,7 +1,7 @@
 ---
 title: "Tracking the coronavirus outbreak in Germany from March 2020"
 author: Nancy Yu
-date: '2021-12-16T21:00:00+01:00'
+date: '2021-12-18T09:00:00+01:00'
 categories:
   - R visualization
 tags:
@@ -36,8 +36,6 @@ colors16 <- c('#A6CEE3', '#1F78B4', '#B2DF8A', '#33A02C',
 
 ```
 
-
-*Last modified: 2021-12-16.* 
 
  
 
