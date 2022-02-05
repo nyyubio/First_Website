@@ -5,7 +5,7 @@
     <link>/tags/covid19/</link>
     <description>Recent content in covid19 on Coronavirus Cabin Fever</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 31 Jan 2022 21:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 05 Feb 2022 10:00:00 +0100</lastBuildDate>
     
 	<atom:link href="/tags/covid19/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,7 +13,7 @@
     <item>
       <title>Cases in all of Germany</title>
       <link>/post/germanyallcases/</link>
-      <pubDate>Mon, 31 Jan 2022 21:00:00 +0100</pubDate>
+      <pubDate>Sat, 05 Feb 2022 10:00:00 +0100</pubDate>
       
       <guid>/post/germanyallcases/</guid>
       <description>Data source: Our World In Data
@@ -24,7 +24,7 @@ Cumulative number of confirmed SARS-CoV-2 cases in Germany in linear scale since
     <item>
       <title>Tracking the coronavirus outbreak in Germany from March 2020</title>
       <link>/post/germanycases/</link>
-      <pubDate>Mon, 31 Jan 2022 21:00:00 +0100</pubDate>
+      <pubDate>Sat, 05 Feb 2022 10:00:00 +0100</pubDate>
       
       <guid>/post/germanycases/</guid>
       <description>This is my attempt to visualize some SARS-CoV-2 data with some R code (please pardon the non-optimal layout). German data is obtained from the Robert Koch Institute. Data used from March 15, 2020 (not updated every day).
