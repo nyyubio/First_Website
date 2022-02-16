@@ -1,7 +1,7 @@
 ---
 title: "Tracking the coronavirus outbreak in Germany from March 2020"
 author: "Nancy Yu"
-date: '2022-02-13T23:00:00+01:00'
+date: '2022-02-16T22:00:00+01:00'
 categories:
   - R visualization
 tags:
@@ -69,7 +69,7 @@ cum.plot <- ggplot(data=states.final, aes(x=Days_100, y=Total_Cases, group=State
             geom_line() + geom_point(size = 0.05) +     
           #  scale_color_brewer(palette = 'Paired') + 
             scale_colour_manual(name= "State", values= colors16) +
-            scale_x_continuous('Days since the 100th case', limits=c(0,700)) + 
+            scale_x_continuous('Days since the 100th case', limits=c(0,800)) + 
             scale_y_continuous(name="Total cases", labels= comma) + 
             #ggtitle('Linear scale') +
             theme_minimal()
@@ -103,7 +103,7 @@ cum.plot2 <- ggplot(data=states.final, aes(x=Days_100, y=Total_Cases, group=Stat
              geom_line() + geom_point(size=0.05) + 
           #   scale_color_brewer(palette = 'Paired') +
              scale_colour_manual(name= "State", values= colors16) +
-             scale_x_continuous(name='Days since the 100th case', limits=c(0,700)) + 
+             scale_x_continuous(name='Days since the 100th case', limits=c(0,800)) + 
              scale_y_continuous(name="Total cases", trans = 'log10', breaks = logbreaks, minor_breaks =                                 logminor_breaks, labels= comma) +
              annotation_logticks(sides="l") + 
              #ggtitle('Logarithmic scale') +
@@ -137,7 +137,7 @@ per100.plot <- ggplot(data=states16.final, aes(x=Days_100, y=Per100, group=State
             geom_line() + geom_point(size = 0.05) + 
             # scale_color_brewer(palette = 'Paired') +
             scale_colour_manual(name= "State", values= colors16) +
-            scale_x_continuous('Days since 100 cases', limits=c(0,700)) + 
+            scale_x_continuous('Days since 100 cases', limits=c(0,800)) + 
             scale_y_continuous("Cumulative cases per 100,000") + 
             #ggtitle('Linear scale') +
             theme_minimal()
@@ -246,7 +246,7 @@ deathper100.plot <- ggplot(data=deaths.final100, aes(x=Dates, y=DeathPer100, gro
             geom_line() + geom_point(size = 0.05) + 
             # scale_color_brewer(palette = 'Paired') +
             scale_colour_manual(name= "State", values= colors16) +
-          #  scale_x_continuous('Days since 5 deaths', limits=c(0,700)) +
+          #  scale_x_continuous('Days since 5 deaths', limits=c(0,800)) +
             scale_x_date(name='Date', labels=date_format('%Y-%m-%d')) + 
             scale_y_continuous("Cumulative deaths per 100,000") + 
             #ggtitle('Linear scale') +
