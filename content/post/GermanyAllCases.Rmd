@@ -14,6 +14,7 @@ tags: ["covid19"]
 knitr::opts_chunk$set(echo=TRUE, collapse = TRUE)
 
 libload<-function(...) {
+  
     libs<-unlist(list(...))
     req<-unlist(lapply(libs,require,character.only=TRUE))
     need<-libs[req==FALSE]
