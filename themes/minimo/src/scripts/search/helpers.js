@@ -21,7 +21,7 @@ export const getUrlSearchParam = name => {
     let urlParams = new URLSearchParams(window.location.search)
     return urlParams.get(name)
   } else {
-    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]')
+    name = name.replace(/[\[]/g, '\\[').replace(/[\]]/g, '\\]')
     let regex = new RegExp('[\\?&]' + name + '=([^&#]*)')
     let results = regex.exec(location.search)
     return results === null
